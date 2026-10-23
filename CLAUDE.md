@@ -31,6 +31,6 @@ The project was a Laravel app until October 2026; that code is only in the git h
 
 - All visible text is in Italian, written directly in the pages (there is no translation layer).
 - Indent with 4 spaces (see `.editorconfig`).
-- `astro` is pinned to an exact version because the local Node (from Herd) is 22.22, and Astro 7.4.2+ needs Node 22.23.4+. Update Node before upgrading Astro.
+- Node 22.23.4 or newer is required (Astro's minimum). Locally it comes from Herd.
 - Never invent facts about the quartiere (names, addresses, dates, council members): ask the owner for real content.
 - Pages must be accessible (semantic HTML, alt text, sufficient contrast) and work on mobile.
