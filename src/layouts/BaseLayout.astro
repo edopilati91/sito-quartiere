@@ -1,5 +1,8 @@
 ---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
 import '../styles/global.css';
+import logo from '../assets/logo.jpg';
 import { siteConfig } from '../site.config';
 
 interface Props {
@@ -10,6 +13,20 @@ interface Props {
 const { title, description = siteConfig.description } = Astro.props;
 const pageTitle = title ? `${title} - ${siteConfig.name}` : siteConfig.name;
 const baseUrl = import.meta.env.BASE_URL;
+
+const navigation = [
+    { label: 'Home', href: baseUrl },
+    { label: 'Il Consiglio', href: `${baseUrl}consiglio/` },
+    { label: 'Festa Votiva', href: `${baseUrl}festa-votiva/` },
+    { label: 'Pubblicazioni', href: `${baseUrl}pubblicazioni/` },
+    { label: 'Contatti', href: `${baseUrl}contatti/` },
+];
+
+// Home is current only on its own page; the other links also on their subpages.
+const isCurrent = (href: string) =>
+    href === baseUrl ? Astro.url.pathname === baseUrl : Astro.url.pathname.startsWith(href);
+
+const articles = (await getCollection('storia')).sort((a, b) => a.data.order - b.data.order);
 ---
 
 <!doctype html>
@@ -22,20 +39,129 @@ const baseUrl = import.meta.env.BASE_URL;
         <link rel="icon" href={`${baseUrl}favicon.ico`} />
         <title>{pageTitle}</title>
     </head>
-    <body class="flex min-h-screen flex-col bg-white text-neutral-900 antialiased">
-        <header class="border-b border-neutral-200">
-            <div class="mx-auto max-w-5xl px-4 py-4">
-                <a href={baseUrl} class="font-semibold">{siteConfig.name}</a>
+    <body class="flex min-h-screen flex-col bg-white font-sans text-inchiostro antialiased selection:bg-verde-chiaro">
+        <a
+            href="#contenuto"
+            class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-white focus:px-4 focus:py-2 focus:shadow"
+        >
+            Vai al contenuto
+        </a>
+
+        <header class="testata sticky top-0 z-40 bg-white">
+            <div class="mx-auto flex h-20 max-w-[90rem] items-center justify-between gap-6 px-4 sm:px-8">
+                <a href={baseUrl} class="flex items-center gap-3">
+                    <Image src={logo} alt="" width={60} densities={[1, 2]} class="h-auto w-[60px]" />
+                    <span class="font-marchio text-lg uppercase leading-none tracking-wide sm:text-2xl">
+                        San Fortunato
+                    </span>
+                </a>
+
+                <nav aria-label="Menu principale" class="hidden lg:block">
+                    <ul class="flex items-center gap-9 text-[1.0625rem]">
+                        {
+                            navigation.map((item) => (
+                                <li>
+                                    <a
+                                        href={item.href}
+                                        aria-current={isCurrent(item.href) ? 'page' : undefined}
+                                        class="border-b border-transparent pb-0.5 transition-colors hover:border-inchiostro aria-[current=page]:border-inchiostro"
+                                    >
+                                        {item.label}
+                                    </a>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </nav>
+
+                <details class="group relative lg:hidden">
+                    <summary
+                        class="flex size-12 cursor-pointer list-none items-center justify-center rounded-full bg-inchiostro text-white [&::-webkit-details-marker]:hidden"
+                    >
+                        <span class="sr-only">Menu</span>
+                        <svg class="size-5 group-open:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M4 7h16M4 12h16M4 17h10"></path>
+                        </svg>
+                        <svg class="hidden size-5 group-open:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M6 6l12 12M18 6 6 18"></path>
+                        </svg>
+                    </summary>
+                    <nav aria-label="Menu principale" class="absolute right-0 mt-3 w-64 rounded-xl bg-white p-3 shadow-xl ring-1 ring-black/5">
+                        <ul>
+                            {
+                                navigation.map((item) => (
+                                    <li>
+                                        <a
+                                            href={item.href}
+                                            aria-current={isCurrent(item.href) ? 'page' : undefined}
+                                            class="block rounded-lg px-4 py-3 text-lg hover:bg-verde-tenue aria-[current=page]:font-semibold aria-[current=page]:text-verde"
+                                        >
+                                            {item.label}
+                                        </a>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </nav>
+                </details>
             </div>
         </header>
 
-        <main class="flex-1">
+        <main id="contenuto" class="flex-1 overflow-x-clip">
             <slot />
         </main>
 
-        <footer class="border-t border-neutral-200 text-sm text-neutral-600">
-            <div class="mx-auto max-w-5xl px-4 py-6">
-                © {new Date().getFullYear()} {siteConfig.name} · Bassano del Grappa
+        <footer class="border-t border-black/10">
+            <div class="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:grid-cols-2 sm:px-8 lg:grid-cols-[1.2fr_1fr_1.3fr_1.5fr]">
+                <div>
+                    <p class="font-marchio text-2xl uppercase">San Fortunato</p>
+                    <p class="mt-3 text-neutral-600">Il sito del Consiglio di Quartiere San Fortunato di Bassano del Grappa.</p>
+                </div>
+                <div>
+                    <p class="occhiello text-neutral-500">Il quartiere</p>
+                    <ul class="mt-4 space-y-3">
+                        {
+                            navigation.slice(1).map((item) => (
+                                <li>
+                                    <a href={item.href} class="underline-offset-4 hover:underline">
+                                        {item.label}
+                                    </a>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+                <div>
+                    <p class="occhiello text-neutral-500">Le storie</p>
+                    <ul class="mt-4 space-y-3">
+                        {
+                            articles.map((article) => (
+                                <li>
+                                    <a href={`${baseUrl}festa-votiva/${article.id}/`} class="underline-offset-4 hover:underline">
+                                        {article.data.title}
+                                    </a>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+                <div>
+                    <p class="occhiello text-neutral-500">Contatti</p>
+                    <ul class="mt-4 space-y-3">
+                        <li>
+                            <a href={`mailto:${siteConfig.email}`} class="break-all underline-offset-4 hover:underline">
+                                {siteConfig.email}
+                            </a>
+                        </li>
+                        <li><a href={siteConfig.facebook} class="underline-offset-4 hover:underline">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-black/10">
+                <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-sm text-neutral-600 sm:flex-row sm:justify-between sm:px-8">
+                    <p>© {new Date().getFullYear()} Consiglio di {siteConfig.name}</p>
+                    <p>Bassano del Grappa</p>
+                </div>
             </div>
         </footer>
     </body>

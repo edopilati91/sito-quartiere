@@ -1,0 +1,172 @@
+---
+import { Image } from 'astro:assets';
+import signori from '../assets/pubblicazioni/signori-origini-e-vicende.jpg';
+import zonta from '../assets/pubblicazioni/zonta-memorie-cronache.jpg';
+import orti from '../assets/storia/orti-monastero.jpg';
+import TestataPagina from '../components/TestataPagina.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+    title="Pubblicazioni"
+    description="I volumi sulla storia del monastero di San Fortunato e della Festa Votiva pubblicati dal Consiglio di Quartiere."
+>
+    <TestataPagina titolo="Pubblicazioni" occhiello="Volumi pubblicati dal Consiglio di Quartiere" immagine={orti} />
+
+    <section class="bg-verde-tenue">
+        <figure class="mx-auto max-w-3xl px-4 py-24 text-center sm:px-8">
+            <blockquote class="rivela text-xl font-light leading-relaxed sm:text-2xl">
+                <p>
+                    Quest’opera, frutto della passione, dell’impegno e della generosità di molti, vuole essere un segno
+                    di attenzione e di affetto per il nostro quartiere e per la gente che lo abita. Nel ringraziare di
+                    cuore tutti quelli che hanno contribuito alla sua realizzazione, la affidiamo, come un ideale
+                    testimone, ai nostri giovani con l’auspicio che vogliano continuare ad impegnarsi concretamente per
+                    conservare e ravvivare anche in futuro l’amore per le tradizioni, la sensibilità sociale e il senso
+                    di appartenenza che fanno del quartiere di San Fortunato un’accogliente, vivace comunità.
+                </p>
+            </blockquote>
+            <figcaption class="mt-8">
+                <p class="occhiello text-verde">Il Consiglio di Quartiere</p>
+                <p class="mt-1 text-neutral-600">San Fortunato di Bassano del Grappa, 25 agosto 2000</p>
+            </figcaption>
+        </figure>
+    </section>
+
+    <section class="mx-auto grid max-w-6xl gap-12 px-4 py-24 sm:px-8 lg:grid-cols-[300px_1fr]" aria-labelledby="signori">
+        <div class="lg:sticky lg:top-28 lg:self-start">
+            <Image
+                src={signori}
+                alt="Copertina del volume di Franco Signori, con due angeli musicanti affrescati"
+                width={300}
+                densities={[1, 2]}
+                class="rivela h-auto w-[200px] shadow-[0_30px_60px_-20px_rgb(0_0_0/0.45)] lg:w-[300px]"
+            />
+            <div>
+                <h2 id="signori" class="mt-8 text-3xl font-light leading-tight">
+                    Origini e vicende del monastero benedettino di San Fortunato di Bassano
+                </h2>
+                <p class="occhiello mt-3 text-verde">Franco Signori</p>
+            </div>
+        </div>
+
+        <div class="testo">
+            <h3>Prefazione dell’autore</h3>
+            <p>
+                Il nome di San Fortunato, che sta all’origine dell’insigne monastero di Bassano di cui si vuol trattare
+                in questo libro, deriva evidentemente dalla parola “fortuna”. Ma da quale fortuna? Questa voce, infatti,
+                di origine latina aveva un tempo significato ambiguo, essendo adoperata per designare indifferentemente
+                sia la “fortuna bona” cioè la nostra fortuna, come la “fortuna mala” cioè quella che noi diciamo
+                malasorte o sventura. Penso sia stata proprio questa “fortuna” ambigua a farmi incontrare un giorno con
+                la vicenda storica di San Fortunato e quindi permettermi di recare a termine non senza pene e incertezze
+                varie anche questa fatica.
+            </p>
+            <p>
+                Tra i beni patrimoniali dei monaci di San Fortunato c’era una volta anche un molino: antico e glorioso
+                come il monastero stesso, e per giunta collaudato dal tempo e dalle brentane. Muovendo lentamente le sue
+                quattro ruote nelle acque della rosta di casa esso, a quanto dicono le pergamene, macinava lento, ma
+                fino. Oggi i nostri molini, come del resto i molini stessi degli storici attuali, non hanno più bisogno
+                in genere né di roste, né di acqua, né di ruote, né di mole di pietra “recoara” per macinare... Salvo
+                quelli che resistendo alle novità della moda e della “cultura” d’oggigiorno, continuano, come spero nel
+                mio caso, a macinare il loro grano all’antica... e cioè in modo lento ma fino. Non so però con quale
+                coraggio e soprattutto con quale “fortuna”...
+            </p>
+            <p>
+                È vero, i nostri antichi padri parlando di questa dea bendata solevano dire in una lingua oggi,
+                purtroppo, in disuso: “Audaces Fortuna iuvat! La Fortuna aiuta chi ha coraggio”. Ma i monaci del nostro
+                monastero furono i primi a perderlo, il coraggio! Sull’architrave, infatti, della loro porta di casa
+                avevano fatto incidere il seguente amaro e ironico saluto: “Non tibi Fortunae sed Fortunato salve! Il
+                nostro benvenuto non sia per te, cara Fortuna, ma per Fortunato!”. Ma per quale Fortunato? mi viene da
+                domandare... Per quello delle monache di San Felice, giunte fra noi a fondare il loro monastero agli
+                inizi del Mille o per quello dei monaci benedettini di Santa Giustina? Come si sa, di santi che rechino
+                questo nome, stando ai diversi calendari della Chiesa, ce ne sono parecchi: quasi, se non oltre, una
+                ventina!... Le monache benedettine di Vicenza invocandolo come loro patrono, dovevano senz’altro
+                appellarsi a quello di Vicenza, fratello e compagno di martirio nel 296 d.C. di San Felice; mentre i
+                monaci padovani, giunti da noi agli inizi del Quattrocento, abbinandolo nella loro devozione al suo
+                vescovo Sant’Ermagora, martire insieme con lui sotto Nerone nel 66 d.C., dovrebbero essersi messi sotto
+                la protezione di un altro Santo, il quale essendo nativo di Aquileia non ha nulla a che vedere con quello
+                di Vicenza... A chi dunque dei due dovremmo aprire per primo la porta di casa?
+            </p>
+            <p>
+                L’apostolo San Paolo, arrivato nei suoi viaggi apostolici ad Atene, capitale della cultura antica, per
+                annunciarvi il vangelo, si presenterà ai cittadini di quella grande città dicendo: “Vedo o Ateniesi che
+                voi siete molto religiosi. Passando, infatti, davanti agli altari e ai templi della vostra città ne ho
+                trovato uno dedicato addirittura al ‘dio ignoto’! Ebbene è proprio di questo dio, che voi onorate senza
+                conoscerlo, che io oggi voglio parlarvi”. Le parole dell’apostolo, mutatis naturalmente mutandis,
+                potrebbero andar bene anche per me come incipit o prefazione di questo libro.
+            </p>
+            <h3>Ringraziamenti</h3>
+            <p>
+                L’autore di quest’opera ringrazia quanti ne hanno patrocinato e sostenuto moralmente e finanziariamente
+                la pubblicazione. In particolare esprime un grazie cordiale al dottor Paolo Sartori, solerte e
+                intelligente custode dell’eredità monumentale di San Fortunato per l’amore e la passione con cui ha
+                seguito il suo studio e gli ha aperto il cammino all’acquisizione interpretativa di tanti elementi
+                conoscitivi utili e necessari a concludere felicemente la sua ricerca. Coglie infine l’occasione per
+                ringraziare vivamente anche le gentili signore Giuliana Fontana Carraro, Nella Pin ed Emanuela Signori
+                Cavalli che gli sono state vicine e gli hanno messo a disposizione il loro tempo e la loro competenza
+                nella correzione delle bozze e nella compilazione degli indici.
+            </p>
+            <p class="occhiello text-verde">Don Franco Signori</p>
+        </div>
+    </section>
+
+    <section class="mx-auto grid max-w-6xl gap-12 border-t border-black/10 px-4 py-24 sm:px-8 lg:grid-cols-[300px_1fr]" aria-labelledby="zonta">
+        <div class="lg:sticky lg:top-28 lg:self-start">
+            <Image
+                src={zonta}
+                alt="Copertina del volume di Giuseppe Zonta, con la statua della Madonna del Rosario e la processione"
+                width={300}
+                densities={[1, 2]}
+                class="rivela h-auto w-[200px] shadow-[0_30px_60px_-20px_rgb(0_0_0/0.45)] lg:w-[300px]"
+            />
+            <div>
+                <h2 id="zonta" class="mt-8 text-3xl font-light leading-tight">
+                    Memorie, cronache e personaggi intorno alla Festa Votiva di San Fortunato
+                </h2>
+                <p class="occhiello mt-3 text-verde">Giuseppe Zonta</p>
+            </div>
+        </div>
+
+        <div class="testo">
+            <h3>Prefazione dell’autore</h3>
+            <p>
+                L’idea di un libro sul convento di San Fortunato nacque intorno agli anni del centenario della Festa
+                Votiva (1979). Fu allora pubblicato un opuscolo, a cura del direttore del periodico parrocchiale “La Voce
+                dei Giovani”; poi il Prof. Mons. Gio. Mantese tenne nella chiesa di San Fortunato, venerdì 5 ottobre
+                1979, una interessante Conferenza sulle origini e la storia dell’antico monastero (nella stessa occasione
+                il poeta bassanese Gino Pistorello proclamò la sua bellissima composizione “El Centenario”). Tuttavia,
+                sia dal primo libretto, come pure dal discorso dello storico Mantese, emergevano forti ombre ed assoluta
+                mancanza di documenti certi sulle origini remote del complesso monastico. Ci voleva proprio tutta la
+                perizia di don Franco Signori per fare un po’ più di luce sul mistero, anche se rimangono ancora non
+                pochi punti oscuri.
+            </p>
+            <p>
+                La nuova ricerca storica è stata voluta e promossa dal Comitato di quartiere di San Fortunato, al fine di
+                trovare nella storia nuovi e sempre più forti motivi di coesione umana ed una certa identità storica in
+                un quartiere in rapidissima evoluzione, evitando di cadere nell’anonima abulia caratteristica di tanti
+                nuovi agglomerati urbani. Come segretario del Comitato di quartiere, nonché incaricato del servizio
+                presso la chiesa (nonsolo) in occasione della sagra di San Fortunato, ho ritenuto opportuno dare il mio
+                modesto contributo all’opera storica programmata. L’idea primitiva era semplicemente quella di
+                ricercare nei vecchi documenti, in mia custodia, tutti i personaggi e fatti in qualche modo legati alla
+                Festa Votiva annuale, in modo da fornire una traccia per la raccolta e commento del materiale
+                iconografico da pubblicare.
+            </p>
+            <p>
+                Ma, a lavoro concluso, mi resi conto che troppo spesso l’entusiasmo mi aveva preso la mano, per cui il
+                mio elaborato difficilmente si sarebbe amalgamato con lo scritto principale del nuovo libro. Allora,
+                buttare tutto sul fuoco? Sarebbe stato un peccato. Il Comitato ritenne opportuno pubblicare un
+                supplemento allegato all’opera principale: forse qualche lettore troverà piacevole rivisitare i ricordi
+                del nostro passato.
+            </p>
+            <p>
+                Analizzando le vecchie carte della “sagra” mi sono sempre attenuto alla realtà documentata, quando
+                possibile; ho invece dato un’interpretazione, laddove necessario, basandomi sulla mia esperienza diretta
+                e sulle testimonianze degli anziani della contrada, ma soprattutto su quelle di mio padre, “nonsolo”
+                della sagra a partire dagli anni ’20 fino alla sua morte nel 1976. Mi auguro di cuore che il lavoro sia
+                ben accetto non solo alle famiglie “storiche” del rione, che troveranno tra le righe i nomi e gli atti
+                dei loro padri, ma anche a quanti altri sono venuti a vivere più recentemente in questa contrada. Auguro
+                che questo possa costituire per tutti la base per un cosciente ed ordinato progresso civile.
+            </p>
+            <p class="occhiello text-verde">Giuseppe Zonta</p>
+        </div>
+    </section>
+</BaseLayout>

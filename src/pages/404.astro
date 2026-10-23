@@ -1,13 +1,15 @@
 ---
+import Bottone from '../components/Bottone.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Pagina non trovata">
-    <section class="mx-auto max-w-5xl px-4 py-16">
-        <h1 class="text-4xl font-bold">Pagina non trovata</h1>
-        <p class="mt-4 text-lg text-neutral-700">
-            La pagina che cerchi non esiste o è stata spostata.
-            <a href={import.meta.env.BASE_URL} class="underline">Torna alla home</a>.
-        </p>
+    <section class="mx-auto flex min-h-[60svh] max-w-3xl flex-col items-center justify-center px-4 py-24 text-center">
+        <p class="occhiello text-verde">Errore 404</p>
+        <h1 class="mt-4 text-4xl font-light sm:text-6xl">Pagina non trovata</h1>
+        <p class="mt-6 text-lg text-neutral-700">La pagina che cerchi non esiste o è stata spostata.</p>
+        <div class="mt-10">
+            <Bottone href={import.meta.env.BASE_URL}>Torna alla home</Bottone>
+        </div>
     </section>
 </BaseLayout>

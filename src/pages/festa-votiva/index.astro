@@ -1,0 +1,99 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import cucina from '../../assets/storia/cucina-sagra.jpg';
+import processione from '../../assets/storia/processione-luminarie.jpg';
+import sagre from '../../assets/storia/banda-chiostro.jpg';
+import DueFoto from '../../components/DueFoto.astro';
+import TestataPagina from '../../components/TestataPagina.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const baseUrl = import.meta.env.BASE_URL;
+const articles = (await getCollection('storia')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout
+    title="Festa Votiva"
+    description="La Festa Votiva della Madonna del Rosario a San Fortunato, dal 1879: storia, tradizioni e memorie."
+>
+    <TestataPagina titolo="Festa Votiva" occhiello="Madonna del Rosario · dal 1879" immagine={processione} />
+
+    <section class="mx-auto grid max-w-7xl items-center gap-16 px-4 py-24 sm:px-8 lg:grid-cols-2 lg:py-32">
+        <div class="rivela max-w-xl">
+            <p class="occhiello">Tra religiosità e festa popolare</p>
+            <h2 class="mt-4 text-4xl font-light leading-tight sm:text-5xl">
+                Il lunedì dopo la prima domenica di ottobre
+            </h2>
+            <blockquote class="mt-8 border-l-2 border-verde pl-5 text-lg italic leading-relaxed text-neutral-700">
+                <p>
+                    No’ ocorea calendari …<br />
+                    quando le foje verde de vizea se vestiva de zalo<br />
+                    e se impissava i rami dei fagari cascava<br />
+                    la Madona del Rosario…
+                </p>
+                <footer class="mt-3 text-base not-italic text-neutral-600">
+                    da <a href={`${baseUrl}festa-votiva/el-centenario/`} class="underline underline-offset-4 hover:text-verde">“El Çentenario”</a> di Gino Pistorello
+                </footer>
+            </blockquote>
+            <p class="mt-8 text-lg leading-relaxed text-neutral-700">
+                Nel 1879 i nonni fecero voto solenne alla Beata Vergine del Rosario per proteggere i bambini
+                dall’epidemia di difterite. Da allora, ogni anno, la contrada si illumina e si ritrova.
+            </p>
+        </div>
+        <DueFoto
+            grande={sagre}
+            grandeAlt="Una banda suona nel chiostro del monastero durante la Festa, davanti alla statua della Madonna"
+            piccola={cucina}
+            piccolaAlt="Volontari al lavoro nella cucina della sagra"
+        />
+    </section>
+
+    <section class="mx-auto max-w-7xl px-4 pb-24 sm:px-8 lg:pb-32">
+        <h2 class="rivela text-center text-4xl font-light sm:text-5xl">Le storie</h2>
+        <ul class="mt-16 grid gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+            {
+                articles.map((article) => (
+                    <li class="rivela">
+                        <a href={`${baseUrl}festa-votiva/${article.id}/`} class="group block">
+                            <div class="aspect-[4/3] overflow-hidden bg-verde-tenue">
+                                {article.data.cover ? (
+                                    <Image
+                                        src={article.data.cover}
+                                        alt=""
+                                        widths={[400, 800]}
+                                        sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
+                                        class="size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    />
+                                ) : (
+                                    <div class="flex size-full items-center justify-center p-10 text-center text-2xl font-light italic text-verde">
+                                        «No’ ocorea calendari…»
+                                    </div>
+                                )}
+                            </div>
+                            {article.data.author && <p class="mt-5 text-sm font-semibold">{article.data.author}</p>}
+                            <h3 class:list={['text-2xl leading-snug group-hover:text-verde', article.data.author ? 'mt-1' : 'mt-5']}>
+                                {article.data.title}
+                            </h3>
+                            <p class="mt-3 leading-relaxed text-neutral-600">{article.data.summary}</p>
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </section>
+
+    <section class="bg-verde-tenue">
+        <div class="mx-auto max-w-3xl px-4 py-24 text-center sm:px-8">
+            <p class="rivela text-xl font-light leading-relaxed sm:text-2xl">
+                Un grazie sincero a tutti i volontari che da sempre lavorano per la Festa con umiltà e responsabilità;
+                un sentito ringraziamento particolare alla famiglia Sartori proprietaria del complesso monastico per
+                l’ormai secolare gentile concessione di accedere liberamente a luogo privato. Grazie alla buona volontà
+                di quanti ci consentono di rivivere questa grande “Sagra” religioso-popolare, una delle più antiche
+                feste del territorio bassanese; ci auguriamo che anche quest’anno lo spirito resti ancora immutato: fede
+                sincera sulla protezione del cielo, amicizia e sana allegria in tutte le manifestazioni esteriori. Vi
+                aspettiamo tutti a festeggiare.
+            </p>
+            <p class="occhiello mt-8 text-verde">Il Comitato organizzatore</p>
+        </div>
+    </section>
+</BaseLayout>

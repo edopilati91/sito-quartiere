@@ -21,10 +21,16 @@ The project was a Laravel app until October 2026; that code is only in the git h
 ## Architecture
 
 - `src/site.config.ts` — site name, description and language, used by the layout and pages
-- `src/pages/` — one file per route (`index.astro` is `/`, `404.astro` is the not-found page)
+- `src/pages/` — one file per route (`index.astro` is `/`, `404.astro` is the not-found page); `festa-votiva/[id].astro` renders the history articles
+- `src/content.config.ts` and `src/content/storia/` — the `storia` content collection: one Markdown file per history article about the Festa Votiva, copied from the old Jimdo site (quartiere-sanfortunato.com)
+- `src/assets/` — images processed by Astro (`<Image>`): the logo and the photos
+- `src/components/` — `Bottone` (pill button), `DueFoto` (large photo with a smaller overlapping one), `TestataPagina` (photo banner at the top of inner pages), `Carosello` (horizontal card list with arrows)
 - `src/layouts/BaseLayout.astro` — shared HTML shell: `lang="it"`, meta tags, header and footer. Every page uses it and passes `title` and `description`.
-- `src/styles/global.css` — Tailwind 4 entry point (`@import 'tailwindcss'`, configured in CSS, no `tailwind.config.js`), loaded by the layout
+- `src/styles/global.css` — Tailwind 4 entry point (`@import 'tailwindcss'`, configured in CSS, no `tailwind.config.js`), loaded by the layout. It holds the theme (greens from the logo, fonts Public Sans and Urbanist self-hosted via `@fontsource`), the button styles and the animations
+- The graphic style follows https://www.cimamontegrappa.it/ (chosen by the owner): white, light large headings, full-width photos, pill buttons.
+- Scroll-driven animations (`animation-timeline`) must be written with longhand properties: the CSS minifier merges them into the `animation` shorthand, which browsers reject. All animations stop under `prefers-reduced-motion`.
 - `public/` — files served as-is (favicons, `robots.txt`)
+- Contact email and Facebook link are in `src/site.config.ts`; the council members are listed in `src/pages/consiglio.astro`
 - The site is published on GitHub Pages at https://edopilati91.github.io/sito-quartiere/ by `.github/workflows/deploy.yml` on every push to `main`. Because of the `/sito-quartiere/` base path, internal links and `public/` files must be prefixed with `import.meta.env.BASE_URL`, never a bare `/`. When a custom domain is connected, update `site` and remove `base` in `astro.config.mjs`.
 - For news or events, use Astro content collections with Markdown files rather than a database.
 

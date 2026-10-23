@@ -1,0 +1,47 @@
+---
+import banda from '../assets/storia/banda-chiostro.jpg';
+import Bottone from '../components/Bottone.astro';
+import TestataPagina from '../components/TestataPagina.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const baseUrl = import.meta.env.BASE_URL;
+
+const members = [
+    { name: 'Luisa Bizzotto', role: 'Presidente' },
+    { name: 'Angelo Frigo', role: 'Vicepresidente e Tesoriere' },
+    { name: 'Roberto Pegoraro', role: 'Segretario' },
+    { name: 'Edoardo Pilati', role: 'Consigliere' },
+    { name: 'Matteo Villanova', role: 'Consigliere' },
+    { name: 'Guido Zonta', role: 'Consigliere' },
+    { name: 'Lorenzo Zonta', role: 'Consigliere' },
+];
+---
+
+<BaseLayout
+    title="Il Consiglio"
+    description="I componenti del Consiglio di Quartiere San Fortunato per il mandato 2025-2028."
+>
+    <TestataPagina titolo="Il Consiglio di Quartiere" occhiello="Mandato 2025-2028" immagine={banda} />
+
+    <section class="mx-auto max-w-5xl px-4 py-24 sm:px-8">
+        <ul class="grid gap-x-10 sm:grid-cols-2">
+            {
+                members.map((member, i) => (
+                    <li class="rivela flex items-baseline justify-between gap-4 border-b border-black/10 py-7">
+                        <span class="text-2xl font-light sm:text-3xl">{member.name}</span>
+                        <span class:list={['shrink-0 text-right', i < 3 ? 'font-semibold text-verde' : 'text-neutral-600']}>
+                            {member.role}
+                        </span>
+                    </li>
+                ))
+            }
+        </ul>
+
+        <div class="mt-20 text-center">
+            <p class="text-lg text-neutral-700">Per scrivere al Consiglio di Quartiere:</p>
+            <div class="mt-6">
+                <Bottone href={`${baseUrl}contatti/`}>Contatti</Bottone>
+            </div>
+        </div>
+    </section>
+</BaseLayout>

@@ -1,0 +1,11 @@
+---
+// Pill-shaped link styled as a button. "pieno" = green, "vuoto" = outlined, "chiaro" = outlined white (on photos).
+interface Props {
+    href: string;
+    variante?: 'pieno' | 'vuoto' | 'chiaro';
+}
+
+const { href, variante = 'pieno' } = Astro.props;
+---
+
+<a href={href} class:list={['bottone', `bottone-${variante}`]}><slot /></a>

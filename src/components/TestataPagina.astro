@@ -1,0 +1,31 @@
+---
+// Banner at the top of inner pages: photo with the page title centred over it.
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
+interface Props {
+    titolo: string;
+    occhiello?: string;
+    immagine: ImageMetadata;
+    // Leave empty when the photo is only decorative.
+    alt?: string;
+}
+
+const { titolo, occhiello, immagine, alt = '' } = Astro.props;
+---
+
+<section class="relative flex h-[50svh] min-h-[340px] items-center justify-center overflow-hidden text-center text-white">
+    <Image
+        src={immagine}
+        alt={alt}
+        widths={[800]}
+        sizes="100vw"
+        loading="eager"
+        class="zoom-lento absolute inset-0 size-full object-cover"
+    />
+    <div class="absolute inset-0 bg-black/45"></div>
+    <div class="relative px-4">
+        {occhiello && <p class="occhiello entra">{occhiello}</p>}
+        <h1 class="entra mt-3 text-4xl font-light sm:text-6xl" style="--ritardo: 0.15s">{titolo}</h1>
+    </div>
+</section>

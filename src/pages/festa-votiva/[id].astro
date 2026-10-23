@@ -1,0 +1,61 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection, render } from 'astro:content';
+import chiostro from '../../assets/storia/chiostro.jpg';
+import Bottone from '../../components/Bottone.astro';
+import TestataPagina from '../../components/TestataPagina.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export const getStaticPaths = (async () => {
+    const articles = (await getCollection('storia')).sort((a, b) => a.data.order - b.data.order);
+    return articles.map((article, i) => ({
+        params: { id: article.id },
+        props: { article, next: articles[(i + 1) % articles.length] },
+    }));
+}) satisfies GetStaticPaths;
+
+const { article, next } = Astro.props;
+const { Content } = await render(article);
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title={article.data.title} description={article.data.summary}>
+    <TestataPagina
+        titolo={article.data.title}
+        occhiello={article.data.author ? `di ${article.data.author}` : 'Festa Votiva'}
+        immagine={article.data.cover ?? chiostro}
+        alt={article.data.coverAlt}
+    />
+
+    <article class="mx-auto max-w-3xl px-4 py-20 sm:px-8">
+        <p>
+            <a href={`${baseUrl}festa-votiva/`} class="text-neutral-600 underline-offset-4 hover:underline">← Festa Votiva</a>
+        </p>
+
+        <div class="testo mt-10">
+            <Content />
+        </div>
+
+        {
+            article.data.sources && (
+                <aside class="mt-14 border-t border-black/10 pt-6 text-neutral-600">
+                    <p class="occhiello text-sm">Riferimenti storici tratti dai volumi</p>
+                    <ul class="mt-3 space-y-1">
+                        <li>«Origini e vicende del monastero benedettino di San Fortunato di Bassano» di Franco Signori</li>
+                        <li>«Memorie, cronache e personaggi intorno alla festa votiva di San Fortunato» di Giuseppe Zonta</li>
+                    </ul>
+                </aside>
+            )
+        }
+    </article>
+
+    <section class="bg-verde-tenue">
+        <div class="mx-auto max-w-3xl px-4 py-20 text-center sm:px-8">
+            <p class="occhiello text-verde">Prossima storia</p>
+            <p class="mt-4 text-3xl font-light sm:text-4xl">{next.data.title}</p>
+            <div class="mt-8">
+                <Bottone href={`${baseUrl}festa-votiva/${next.id}/`}>Continua a leggere</Bottone>
+            </div>
+        </div>
+    </section>
+</BaseLayout>

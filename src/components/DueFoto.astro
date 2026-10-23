@@ -1,0 +1,47 @@
+---
+// A large photo bleeding to the page edge with a smaller one overlapping it, as on the reference site.
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
+interface Props {
+    grande: ImageMetadata;
+    grandeAlt: string;
+    piccola: ImageMetadata;
+    piccolaAlt: string;
+    // Which side of the page the large photo touches.
+    lato?: 'destra' | 'sinistra';
+}
+
+const { grande, grandeAlt, piccola, piccolaAlt, lato = 'destra' } = Astro.props;
+---
+
+<div class="relative pb-16 lg:pb-0">
+    <div
+        class:list={[
+            'relative aspect-[4/5] overflow-hidden sm:aspect-[4/3] lg:aspect-auto lg:h-[640px]',
+            lato === 'destra' ? 'lg:ml-[30%] lg:-mr-[max(2rem,calc((100vw-80rem)/2+2rem))]' : 'lg:mr-[30%] lg:-ml-[max(2rem,calc((100vw-80rem)/2+2rem))]',
+        ]}
+    >
+        <Image
+            src={grande}
+            alt={grandeAlt}
+            widths={[480, 800]}
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            class="size-full object-cover"
+        />
+    </div>
+    <div
+        class:list={[
+            'fluttua absolute bottom-0 w-[45%] shadow-[0_30px_60px_-20px_rgb(0_0_0/0.45)] lg:bottom-[-40px] lg:w-[40%]',
+            lato === 'destra' ? 'left-4 lg:left-0' : 'right-4 lg:right-0',
+        ]}
+    >
+        <Image
+            src={piccola}
+            alt={piccolaAlt}
+            widths={[320, 640]}
+            sizes="(min-width: 1024px) 20vw, 45vw"
+            class="aspect-[3/4] w-full object-cover"
+        />
+    </div>
+</div>

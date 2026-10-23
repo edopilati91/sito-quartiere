@@ -1,12 +1,220 @@
 ---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import logo from '../assets/logo.jpg';
+import signori from '../assets/pubblicazioni/signori-origini-e-vicende.jpg';
+import zonta from '../assets/pubblicazioni/zonta-memorie-cronache.jpg';
+import banda from '../assets/storia/banda-chiostro.jpg';
+import chiostro from '../assets/storia/chiostro.jpg';
+import cucina from '../assets/storia/cucina-sagra.jpg';
+import orti from '../assets/storia/orti-monastero.jpg';
+import processione from '../assets/storia/processione-luminarie.jpg';
+import Bottone from '../components/Bottone.astro';
+import Carosello from '../components/Carosello.astro';
+import DueFoto from '../components/DueFoto.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { siteConfig } from '../site.config';
+
+const baseUrl = import.meta.env.BASE_URL;
+const articles = (await getCollection('storia')).sort((a, b) => a.data.order - b.data.order);
 ---
 
-<BaseLayout>
-    <section class="mx-auto max-w-5xl px-4 py-16">
-        <p class="text-sm font-medium uppercase tracking-wide text-neutral-500">Bassano del Grappa</p>
-        <h1 class="mt-2 text-4xl font-bold">{siteConfig.name}</h1>
-        <p class="mt-4 max-w-2xl text-lg text-neutral-700">Il sito del consiglio di quartiere.</p>
+<BaseLayout description={siteConfig.description}>
+    <!-- Opening photo with the name in the middle -->
+    <section class="relative flex h-[calc(100svh-5rem)] min-h-[480px] items-center justify-center overflow-hidden text-center text-white">
+        <Image
+            src={processione}
+            alt="Foto storica della processione della Festa Votiva sotto le luminarie di carta"
+            widths={[800]}
+            sizes="100vw"
+            loading="eager"
+            fetchpriority="high"
+            class="zoom-lento absolute inset-0 size-full object-cover"
+        />
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="relative px-4">
+            <h1 class="entra font-marchio text-5xl uppercase tracking-wide sm:text-7xl lg:text-8xl">
+                San Fortunato
+            </h1>
+            <p class="entra mt-6 text-lg font-light uppercase tracking-wide sm:text-3xl" style="--ritardo: 0.3s">
+                Il quartiere, il monastero, la festa
+            </p>
+        </div>
+    </section>
+
+    <!-- Welcome: text on the left, two photos on the right -->
+    <section class="mx-auto grid max-w-7xl items-center gap-16 px-4 py-24 sm:px-8 lg:grid-cols-2 lg:py-36">
+        <div class="rivela max-w-xl">
+            <p class="occhiello">Quartiere San Fortunato</p>
+            <h2 class="mt-4 text-4xl font-light leading-tight sm:text-5xl">
+                Benvenuti nel sito del Quartiere San Fortunato di Bassano del Grappa
+            </h2>
+            <p class="mt-8 text-lg leading-relaxed text-neutral-700">
+                Un antico monastero benedettino, una contrada nata tra gli orti e i muri in sassi di Brenta e una festa
+                che dal 1879 si rinnova ogni anno: la Festa Votiva della Madonna del Rosario, il lunedì dopo la prima
+                domenica di ottobre.
+            </p>
+            <p class="mt-4 text-lg leading-relaxed text-neutral-700">
+                Il Consiglio di Quartiere custodisce queste tradizioni e le racconta qui.
+            </p>
+            <div class="mt-10 flex flex-wrap gap-4">
+                <Bottone href={`${baseUrl}festa-votiva/`}>La Festa Votiva</Bottone>
+                <Bottone href={`${baseUrl}consiglio/`} variante="vuoto">Il Consiglio</Bottone>
+            </div>
+        </div>
+        <DueFoto
+            grande={banda}
+            grandeAlt="Una banda suona nel chiostro del monastero durante la Festa, davanti alla statua della Madonna"
+            piccola={processione}
+            piccolaAlt="La processione sotto le luminarie, in una foto d'epoca"
+        />
+    </section>
+
+    <h2 class="rivela px-4 pb-16 text-center text-4xl font-light sm:text-5xl">Il quartiere da scoprire</h2>
+
+    <!-- Half photo with title, half text -->
+    <section class="grid lg:grid-cols-2">
+        <div class="relative flex min-h-[520px] items-end overflow-hidden text-white lg:min-h-[680px]">
+            <Image
+                src={cucina}
+                alt="Volontari al lavoro alla friggitrice nella cucina della sagra"
+                widths={[450]}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                class="absolute inset-0 size-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/10"></div>
+            <div class="relative p-8 sm:p-14 lg:p-20">
+                <h3 class="rivela text-4xl font-light leading-tight sm:text-6xl">La Festa Votiva, dal 1879</h3>
+                <p class="mt-4 max-w-md text-lg text-white/90">
+                    Fede, volontariato e tavola: la festa che da quasi un secolo e mezzo unisce la contrada.
+                </p>
+                <div class="mt-8">
+                    <Bottone href={`${baseUrl}festa-votiva/`} variante="chiaro">Scopri la Festa</Bottone>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col items-center justify-center bg-verde-tenue px-6 py-20 text-center sm:px-14">
+            <h3 class="rivela text-4xl font-light text-verde sm:text-5xl">Le pubblicazioni</h3>
+            <p class="mt-6 max-w-md text-lg leading-relaxed text-neutral-700">
+                Due volumi voluti dal Consiglio di Quartiere raccontano la storia del monastero benedettino e le memorie
+                della Festa Votiva.
+            </p>
+            <div class="rivela mt-10 flex gap-6">
+                <Image
+                    src={signori}
+                    alt="Copertina di «Origini e vicende del monastero benedettino di San Fortunato di Bassano» di Franco Signori"
+                    width={170}
+                    densities={[1, 2]}
+                    class="h-auto w-[130px] -rotate-3 shadow-xl sm:w-[170px]"
+                />
+                <Image
+                    src={zonta}
+                    alt="Copertina di «Memorie, cronache e personaggi intorno alla festa votiva di San Fortunato» di Giuseppe Zonta"
+                    width={170}
+                    densities={[1, 2]}
+                    class="mt-8 h-auto w-[130px] rotate-3 shadow-xl sm:w-[170px]"
+                />
+            </div>
+            <div class="mt-12">
+                <Bottone href={`${baseUrl}pubblicazioni/`}>Vai alle pubblicazioni</Bottone>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stories carousel -->
+    <section class="py-24 lg:py-36">
+        <Carosello titolo="Le storie della Festa Votiva">
+            {
+                articles.map((article) => (
+                    <li class="w-[80vw] shrink-0 snap-start sm:w-[360px]">
+                        <a href={`${baseUrl}festa-votiva/${article.id}/`} class="group block">
+                            <div class="aspect-square overflow-hidden bg-verde-tenue">
+                                {article.data.cover ? (
+                                    <Image
+                                        src={article.data.cover}
+                                        alt=""
+                                        widths={[360, 720]}
+                                        sizes="(min-width: 640px) 360px, 80vw"
+                                        class="size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    />
+                                ) : (
+                                    <div class="flex size-full items-center justify-center p-10 text-center text-2xl font-light italic text-verde">
+                                        «No’ ocorea calendari, quando le foje verde de vizea se vestiva de zalo…»
+                                    </div>
+                                )}
+                            </div>
+                            <h3 class="mt-5 text-center text-xl group-hover:text-verde">{article.data.title}</h3>
+                            {article.data.author && (
+                                <p class="mt-1 text-center text-neutral-600">di {article.data.author}</p>
+                            )}
+                        </a>
+                    </li>
+                ))
+            }
+        </Carosello>
+        <div class="mt-12 text-center">
+            <Bottone href={`${baseUrl}festa-votiva/`}>Tutte le storie</Bottone>
+        </div>
+    </section>
+
+    <!-- Monastery: two photos on the left, text on the right -->
+    <section class="mx-auto grid max-w-7xl items-center gap-16 px-4 pb-24 sm:px-8 lg:grid-cols-2 lg:pb-36">
+        <div class="lg:order-2 lg:pl-12">
+            <div class="rivela max-w-xl">
+                <p class="occhiello">Il monastero di San Fortunato</p>
+                <h2 class="mt-4 text-4xl font-light leading-tight sm:text-5xl">Una chiesa di oltre cinquecento anni</h2>
+                <p class="mt-8 text-lg leading-relaxed text-neutral-700">
+                    La nuova chiesa del monastero benedettino fu iniziata nel 1460 sotto il priore don Bernabò da
+                    Milano e consacrata il primo febbraio 1512. Le decorazioni interne sono opera del pittore bassanese
+                    Francesco Nasocchio: l’azzurra cupola centrale, le volte a botte, l’abside a forma di grande
+                    conchiglia.
+                </p>
+                <div class="mt-10 flex flex-wrap gap-4">
+                    <Bottone href={`${baseUrl}festa-votiva/la-chiesa-del-monastero/`}>La chiesa del monastero</Bottone>
+                    <Bottone href={`${baseUrl}festa-votiva/gli-ortolani/`} variante="vuoto">Gli ortolani</Bottone>
+                </div>
+            </div>
+        </div>
+        <div class="lg:order-1">
+            <DueFoto
+                lato="sinistra"
+                grande={orti}
+                grandeAlt="Un orto in primo piano, il muro in sassi di Brenta e dietro il monastero con il campanile"
+                piccola={chiostro}
+                piccolaAlt="Il chiostro del monastero visto da sotto un arco, con il campanile"
+            />
+        </div>
+    </section>
+
+    <!-- Large outlined name scrolling sideways -->
+    <section class="overflow-hidden py-16" aria-hidden="true">
+        <div class="nastro flex w-max items-center">
+            {
+                [0, 1].map(() => (
+                    <div class="flex shrink-0 items-center gap-16 pr-16">
+                        <span class="contorno whitespace-nowrap font-marchio text-[5rem] uppercase leading-none sm:text-[9rem]">San Fortunato</span>
+                        <Image src={logo} alt="" width={140} densities={[1, 2]} class="h-auto w-[100px] sm:w-[140px]" />
+                        <span class="contorno whitespace-nowrap font-marchio text-[5rem] uppercase leading-none sm:text-[9rem]">Dal 1879</span>
+                        <Image src={logo} alt="" width={140} densities={[1, 2]} class="h-auto w-[100px] sm:w-[140px]" />
+                    </div>
+                ))
+            }
+        </div>
+    </section>
+
+    <!-- Council call to action -->
+    <section class="mx-auto max-w-3xl px-4 py-24 text-center lg:py-32">
+        <p class="occhiello rivela">Il Consiglio di Quartiere 2025-2028</p>
+        <h2 class="rivela mt-4 text-4xl font-light leading-tight sm:text-5xl">
+            Conservare e ravvivare l’amore per le tradizioni
+        </h2>
+        <p class="mt-6 text-lg text-neutral-700">
+            Sette consiglieri al servizio del quartiere. Per proposte, segnalazioni o per dare una mano alla Festa,
+            scriveteci.
+        </p>
+        <div class="mt-10 flex flex-wrap justify-center gap-4">
+            <Bottone href={`${baseUrl}consiglio/`}>Chi siamo</Bottone>
+            <Bottone href={`${baseUrl}contatti/`} variante="vuoto">Contatti</Bottone>
+        </div>
     </section>
 </BaseLayout>
