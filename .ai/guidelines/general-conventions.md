@@ -8,7 +8,7 @@
 
 - **Location**: `app/Enums/`
 - **Values**: TitleCase: `Published`
-- **Implementation**: Implement Filament's `HasLabel` interface, with translated labels
+- **Labels**: add a `label(): string` method that returns a translated label
 - **Comparisons**: compare enum instances (`$event->status === EventStatus::Published`), not `->value`.
   `->value` is correct only when passing values to raw DB queries (`->where(...)`, `->update(...)`).
 
@@ -87,12 +87,8 @@ This is more readable and maintainable, and the static analyser and IDE support 
 
 1. **Create the Model** in `app/Models` with `HasFactory` (always) and `SoftDeletes` (if needed)
 2. **Create Supporting Files**: factory, migration, enum for status fields, seeder if useful
-3. **Create the Filament Resource**:
-   ```bash
-   php artisan make:filament-resource [Name] --generate
-   ```
-4. **Add Translations** in `lang/it/` and `lang/en/`
-5. **Write Tests** in `tests/Feature/`
+3. **Add Translations** in `lang/it/` and `lang/en/`
+4. **Write Tests** in `tests/Feature/`
 
 ## Common Mistakes to Avoid
 

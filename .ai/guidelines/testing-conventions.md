@@ -3,15 +3,10 @@
 Use Pest for testing:
 
 ```php
-use App\Models\User;
+use function Pest\Laravel\get;
 
-use function Pest\Laravel\actingAs;
-
-it('shows the dashboard to a logged in user', function () {
-    $user = User::factory()->create();
-
-    actingAs($user)
-        ->get(route('dashboard'))
+it('shows the home page', function () {
+    get(route('home'))
         ->assertSuccessful();
 });
 ```
