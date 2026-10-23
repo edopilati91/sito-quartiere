@@ -14,7 +14,7 @@ The project was a Laravel app until October 2026; that code is only in the git h
 
 - `npm install` — install dependencies
 - `npm run dev` — dev server at http://localhost:4321
-- `npm run build` — type check (`astro check`) and build the static site into `dist/`; this is what CI runs
+- `npm run build` — type check (`astro check`) and build the static site into `dist/`; this is what CI runs (`build.yml` on pull requests, `deploy.yml` on `main`)
 - `npm run preview` — serve the built `dist/` locally
 - `npm run check` — type check only
 
@@ -24,6 +24,7 @@ The project was a Laravel app until October 2026; that code is only in the git h
 - `src/layouts/BaseLayout.astro` — shared HTML shell: `lang="it"`, meta tags, header and footer. Every page uses it and passes `title` and `description`.
 - `src/styles/global.css` — Tailwind 4 entry point (`@import 'tailwindcss'`, configured in CSS, no `tailwind.config.js`), loaded by the layout
 - `public/` — files served as-is (favicons, `robots.txt`)
+- The site is published on GitHub Pages at https://edopilati91.github.io/sito-quartiere/ by `.github/workflows/deploy.yml` on every push to `main`. Because of the `/sito-quartiere/` base path, internal links and `public/` files must be prefixed with `import.meta.env.BASE_URL`, never a bare `/`. When a custom domain is connected, update `site` and remove `base` in `astro.config.mjs`.
 - For news or events, use Astro content collections with Markdown files rather than a database.
 
 ## Conventions
