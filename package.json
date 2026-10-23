@@ -1,23 +1,23 @@
 {
-    "$schema": "https://www.schemastore.org/package.json",
-    "private": true,
+    "name": "sito-quartiere",
     "type": "module",
+    "version": "0.0.1",
+    "private": true,
+    "engines": {
+        "node": ">=22.22.0"
+    },
     "scripts": {
-        "build": "vp build",
-        "dev": "vp dev"
+        "dev": "astro dev",
+        "build": "astro check && astro build",
+        "preview": "astro preview",
+        "check": "astro check",
+        "astro": "astro"
     },
     "dependencies": {
-        "@tailwindcss/vite": "^4.1.11",
-        "concurrently": "^10.0.3",
-        "laravel-vite-plugin": "^3.1",
-        "tailwindcss": "^4.0.7",
-        "vite": "^8.0.0",
-        "vite-plus": "0.3.0"
-    },
-    "optionalDependencies": {
-        "@laravel/multiplex": "^0.4.1",
-        "@rollup/rollup-linux-x64-gnu": "4.9.5",
-        "@tailwindcss/oxide-linux-x64-gnu": "^4.0.1",
-        "lightningcss-linux-x64-gnu": "^1.29.1"
+        "@astrojs/check": "^0.9.12",
+        "@tailwindcss/vite": "^4.3.3",
+        "astro": "7.4.1",
+        "tailwindcss": "^4.3.3",
+        "typescript": "^6.0.3"
     }
 }
