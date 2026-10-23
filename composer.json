@@ -1,12 +1,12 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/livewire-starter-kit",
+    "name": "edoardopilati/sito-quartiere",
     "type": "project",
-    "description": "The official Laravel starter kit for Livewire.",
+    "description": "Il sito del quartiere.",
     "keywords": ["laravel", "framework"],
-    "license": "MIT",
+    "license": "proprietary",
     "require": {
-        "php": "^8.3",
+        "php": "^8.5",
         "filament/filament": "^5.10",
         "laravel/chisel": "^0.1.0",
         "laravel/fortify": "^1.37.2",
