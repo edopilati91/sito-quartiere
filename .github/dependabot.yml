@@ -16,3 +16,7 @@ updates:
       interval: "weekly"
     cooldown:
       default-days: 5
+    ignore:
+      # @astrojs/check supports TypeScript 5 and 6 only. Remove once it supports 7.
+      - dependency-name: "typescript"
+        versions: [">=7"]
