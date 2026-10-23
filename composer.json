@@ -1,8 +1,8 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "edoardopilati/sito-quartiere",
+    "name": "edopilati91/quartiere-san-fortunato",
     "type": "project",
-    "description": "Il sito del quartiere.",
+    "description": "Il sito del Quartiere San Fortunato di Bassano del Grappa.",
     "keywords": ["laravel", "framework"],
     "license": "proprietary",
     "require": {
