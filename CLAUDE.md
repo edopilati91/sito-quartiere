@@ -20,7 +20,8 @@ The project was a Laravel app until October 2026; that code is only in the git h
 
 ## Architecture
 
-- `src/pages/` — one file per route (`index.astro` is `/`)
+- `src/site.config.ts` — site name, description and language, used by the layout and pages
+- `src/pages/` — one file per route (`index.astro` is `/`, `404.astro` is the not-found page)
 - `src/layouts/BaseLayout.astro` — shared HTML shell: `lang="it"`, meta tags, header and footer. Every page uses it and passes `title` and `description`.
 - `src/styles/global.css` — Tailwind 4 entry point (`@import 'tailwindcss'`, configured in CSS, no `tailwind.config.js`), loaded by the layout
 - `public/` — files served as-is (favicons, `robots.txt`)
@@ -30,6 +31,7 @@ The project was a Laravel app until October 2026; that code is only in the git h
 ## Conventions
 
 - All visible text is in Italian, written directly in the pages (there is no translation layer).
+- The project was set up before the neutral template in `~/Herd/astro-starter` (github.com/edopilati91/astro-starter) and is kept in line with it by hand; it is not linked to it.
 - Indent with 4 spaces (see `.editorconfig`).
 - Node 22.23.4 or newer is required (Astro's minimum). Locally it comes from Herd.
 - Never invent facts about the quartiere (names, addresses, dates, council members): ask the owner for real content.
