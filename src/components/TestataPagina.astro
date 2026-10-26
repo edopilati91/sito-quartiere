@@ -26,6 +26,6 @@ const { titolo, occhiello, immagine, alt = '' } = Astro.props;
     <div class="absolute inset-0 bg-black/45"></div>
     <div class="relative px-4">
         {occhiello && <p class="occhiello entra">{occhiello}</p>}
-        <h1 class="entra mt-3 text-4xl font-light sm:text-6xl" style="--ritardo: 0.15s">{titolo}</h1>
+        <h1 class="entra mt-3 text-4xl font-normal sm:text-6xl" style="--ritardo: 0.15s">{titolo}</h1>
     </div>
 </section>
