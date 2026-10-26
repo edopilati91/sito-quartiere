@@ -26,8 +26,8 @@ The project was a Laravel app until October 2026; that code is only in the git h
 - `src/assets/` — images processed by Astro (`<Image>`): the logo and the photos
 - `src/components/` — `Bottone` (pill button), `DueFoto` (large photo with a smaller overlapping one), `TestataPagina` (photo banner at the top of inner pages), `Carosello` (horizontal card list with arrows)
 - `src/layouts/BaseLayout.astro` — shared HTML shell: `lang="it"`, meta tags, header and footer. Every page uses it and passes `title` and `description`.
-- `src/styles/global.css` — Tailwind 4 entry point (`@import 'tailwindcss'`, configured in CSS, no `tailwind.config.js`), loaded by the layout. It holds the theme (greens from the logo, one font for everything, EB Garamond, self-hosted via `@fontsource`), the button styles and the animations
-- The graphic style follows https://www.cimamontegrappa.it/ (chosen by the owner): white, light large headings, full-width photos, pill buttons.
+- `src/styles/global.css` — Tailwind 4 entry point (`@import 'tailwindcss'`, configured in CSS, no `tailwind.config.js`), loaded by the layout. It holds the theme (greens from the logo, the ivory "carta" page background, one font for everything, EB Garamond, self-hosted via `@fontsource`), the button styles and the animations
+- The graphic style follows https://www.cimamontegrappa.it/ (chosen by the owner): large headings, full-width photos, pill buttons; on top of it, an old-style look chosen by the owner (serif font, ivory background).
 - Scroll-driven animations (`animation-timeline`) must be written with longhand properties: the CSS minifier merges them into the `animation` shorthand, which browsers reject. All animations stop under `prefers-reduced-motion`.
 - `public/` — files served as-is (favicons, `robots.txt`)
 - Contact email and Facebook link are in `src/site.config.ts`; the council members are listed in `src/pages/consiglio.astro`

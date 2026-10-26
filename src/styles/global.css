@@ -6,12 +6,16 @@
     /* One old-style serif for everything, titles included. */
     --font-sans: 'EB Garamond Variable', Garamond, Georgia, serif;
 
-    /* Greens taken from the quartiere logo, dark enough for white text on top. */
-    --color-verde: #2b7a55;
+    /* Greens taken from the quartiere logo, dark enough for white text on top
+       and for green text on the paper and sage backgrounds. */
+    --color-verde: #287250;
     --color-verde-scuro: #1d5a3e;
     --color-verde-chiaro: #8fd3a8;
-    --color-verde-tenue: #eef7f1;
+    --color-verde-tenue: #e8ecdc;
     --color-inchiostro: #111111;
+
+    /* Warm ivory page background, like old paper. */
+    --color-carta: #f7f1e3;
 }
 
 /* Garamond has small letters: a slightly larger base size keeps it readable on phones. */

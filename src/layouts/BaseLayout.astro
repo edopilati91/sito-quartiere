@@ -39,15 +39,15 @@ const articles = (await getCollection('storia')).sort((a, b) => a.data.order - b
         <link rel="icon" href={`${baseUrl}favicon.ico`} />
         <title>{pageTitle}</title>
     </head>
-    <body class="flex min-h-screen flex-col bg-white font-sans text-inchiostro antialiased selection:bg-verde-chiaro">
+    <body class="flex min-h-screen flex-col bg-carta font-sans text-inchiostro antialiased selection:bg-verde-chiaro">
         <a
             href="#contenuto"
-            class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-white focus:px-4 focus:py-2 focus:shadow"
+            class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-carta focus:px-4 focus:py-2 focus:shadow"
         >
             Vai al contenuto
         </a>
 
-        <header class="testata sticky top-0 z-40 bg-white">
+        <header class="testata sticky top-0 z-40 bg-carta">
             <div class="mx-auto flex h-20 max-w-[90rem] items-center justify-between gap-6 px-4 sm:px-8">
                 <a href={baseUrl} class="flex items-center gap-3">
                     <Image src={logo} alt="" width={60} densities={[1, 2]} class="h-auto w-[60px]" />
@@ -86,7 +86,7 @@ const articles = (await getCollection('storia')).sort((a, b) => a.data.order - b
                             <path d="M6 6l12 12M18 6 6 18"></path>
                         </svg>
                     </summary>
-                    <nav aria-label="Menu principale" class="absolute right-0 mt-3 w-64 rounded-xl bg-white p-3 shadow-xl ring-1 ring-black/5">
+                    <nav aria-label="Menu principale" class="absolute right-0 mt-3 w-64 rounded-xl bg-carta p-3 shadow-xl ring-1 ring-black/5">
                         <ul>
                             {
                                 navigation.map((item) => (
@@ -118,7 +118,7 @@ const articles = (await getCollection('storia')).sort((a, b) => a.data.order - b
                     <p class="mt-3 text-neutral-600">Il sito del Consiglio di Quartiere San Fortunato di Bassano del Grappa.</p>
                 </div>
                 <div>
-                    <p class="occhiello text-neutral-500">Il quartiere</p>
+                    <p class="occhiello text-neutral-600">Il quartiere</p>
                     <ul class="mt-4 space-y-3">
                         {
                             navigation.slice(1).map((item) => (
@@ -132,7 +132,7 @@ const articles = (await getCollection('storia')).sort((a, b) => a.data.order - b
                     </ul>
                 </div>
                 <div>
-                    <p class="occhiello text-neutral-500">Le storie</p>
+                    <p class="occhiello text-neutral-600">Le storie</p>
                     <ul class="mt-4 space-y-3">
                         {
                             articles.map((article) => (
@@ -146,7 +146,7 @@ const articles = (await getCollection('storia')).sort((a, b) => a.data.order - b
                     </ul>
                 </div>
                 <div>
-                    <p class="occhiello text-neutral-500">Contatti</p>
+                    <p class="occhiello text-neutral-600">Contatti</p>
                     <ul class="mt-4 space-y-3">
                         <li>
                             <a href={`mailto:${siteConfig.email}`} class="break-all underline-offset-4 hover:underline">
