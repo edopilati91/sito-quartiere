@@ -1,0 +1,52 @@
+{
+    "titolo": "Da San Fortunato a Sarajevo",
+    "descrizione": "In segno di amicizia e pace tra i popoli.",
+    "sezione": "quartiere",
+    "ordine": 5,
+    "gruppi": [
+        {
+            "foto": [
+                {
+                    "file": "001.jpg",
+                    "larghezza": 713,
+                    "altezza": 624
+                },
+                {
+                    "file": "002.jpg",
+                    "larghezza": 355,
+                    "altezza": 1200
+                },
+                {
+                    "file": "003.jpg",
+                    "larghezza": 576,
+                    "altezza": 768
+                },
+                {
+                    "file": "004.jpg",
+                    "larghezza": 576,
+                    "altezza": 768
+                },
+                {
+                    "file": "005.jpg",
+                    "larghezza": 576,
+                    "altezza": 768
+                },
+                {
+                    "file": "006.jpg",
+                    "larghezza": 576,
+                    "altezza": 768
+                },
+                {
+                    "file": "007.jpg",
+                    "larghezza": 576,
+                    "altezza": 768
+                },
+                {
+                    "file": "008.jpg",
+                    "larghezza": 576,
+                    "altezza": 768
+                }
+            ]
+        }
+    ]
+}

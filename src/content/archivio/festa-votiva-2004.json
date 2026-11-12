@@ -1,0 +1,87 @@
+{
+    "titolo": "Festa Votiva 2004",
+    "periodo": "Ottobre 2004",
+    "sezione": "festa-votiva",
+    "ordine": 12,
+    "gruppi": [
+        {
+            "foto": [
+                {
+                    "file": "001.jpg",
+                    "larghezza": 397,
+                    "altezza": 600
+                },
+                {
+                    "file": "002.jpg",
+                    "larghezza": 800,
+                    "altezza": 529
+                },
+                {
+                    "file": "003.jpg",
+                    "larghezza": 800,
+                    "altezza": 529
+                },
+                {
+                    "file": "004.jpg",
+                    "larghezza": 800,
+                    "altezza": 529
+                },
+                {
+                    "file": "005.jpg",
+                    "larghezza": 800,
+                    "altezza": 529
+                },
+                {
+                    "file": "006.jpg",
+                    "larghezza": 800,
+                    "altezza": 529
+                },
+                {
+                    "file": "007.jpg",
+                    "larghezza": 800,
+                    "altezza": 529
+                },
+                {
+                    "file": "008.jpg",
+                    "larghezza": 800,
+                    "altezza": 529
+                },
+                {
+                    "file": "009.jpg",
+                    "larghezza": 800,
+                    "altezza": 529
+                },
+                {
+                    "file": "010.jpg",
+                    "larghezza": 800,
+                    "altezza": 529
+                },
+                {
+                    "file": "011.jpg",
+                    "larghezza": 800,
+                    "altezza": 529
+                },
+                {
+                    "file": "012.jpg",
+                    "larghezza": 800,
+                    "altezza": 529
+                },
+                {
+                    "file": "013.jpg",
+                    "larghezza": 800,
+                    "altezza": 529
+                },
+                {
+                    "file": "014.jpg",
+                    "larghezza": 800,
+                    "altezza": 529
+                },
+                {
+                    "file": "015.jpg",
+                    "larghezza": 800,
+                    "altezza": 529
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "titolo": "Inaugurazione del Centro Sociale",
+    "periodo": "Dicembre 1990",
+    "sezione": "quartiere",
+    "ordine": 7,
+    "gruppi": [
+        {
+            "foto": [
+                {
+                    "file": "001.jpg",
+                    "larghezza": 800,
+                    "altezza": 542
+                },
+                {
+                    "file": "002.jpg",
+                    "larghezza": 800,
+                    "altezza": 542
+                },
+                {
+                    "file": "003.jpg",
+                    "larghezza": 800,
+                    "altezza": 542
+                }
+            ]
+        }
+    ]
+}

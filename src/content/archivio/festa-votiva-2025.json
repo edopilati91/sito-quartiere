@@ -1,0 +1,53 @@
+{
+    "titolo": "Festa Votiva 2025",
+    "periodo": "Ottobre 2025",
+    "crediti": "Foto di Cesare Gerolimetto",
+    "sezione": "festa-votiva",
+    "ordine": 1,
+    "gruppi": [
+        {
+            "foto": [
+                {
+                    "file": "001.jpg",
+                    "larghezza": 1200,
+                    "altezza": 800
+                },
+                {
+                    "file": "002.jpg",
+                    "larghezza": 1000,
+                    "altezza": 667
+                },
+                {
+                    "file": "003.jpg",
+                    "larghezza": 667,
+                    "altezza": 1000
+                },
+                {
+                    "file": "004.jpg",
+                    "larghezza": 1000,
+                    "altezza": 667
+                },
+                {
+                    "file": "005.jpg",
+                    "larghezza": 667,
+                    "altezza": 1000
+                },
+                {
+                    "file": "006.jpg",
+                    "larghezza": 667,
+                    "altezza": 1000
+                },
+                {
+                    "file": "007.jpg",
+                    "larghezza": 1200,
+                    "altezza": 800
+                },
+                {
+                    "file": "008.jpg",
+                    "larghezza": 667,
+                    "altezza": 1000
+                }
+            ]
+        }
+    ]
+}

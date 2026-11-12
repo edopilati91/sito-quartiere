@@ -1,0 +1,72 @@
+{
+    "titolo": "Gita al Finestron",
+    "periodo": "1980 circa",
+    "sezione": "quartiere",
+    "ordine": 6,
+    "gruppi": [
+        {
+            "foto": [
+                {
+                    "file": "001.jpg",
+                    "larghezza": 713,
+                    "altezza": 768
+                },
+                {
+                    "file": "002.jpg",
+                    "larghezza": 713,
+                    "altezza": 768
+                },
+                {
+                    "file": "003.jpg",
+                    "larghezza": 713,
+                    "altezza": 768
+                },
+                {
+                    "file": "004.jpg",
+                    "larghezza": 713,
+                    "altezza": 768
+                },
+                {
+                    "file": "005.jpg",
+                    "larghezza": 713,
+                    "altezza": 768
+                },
+                {
+                    "file": "006.jpg",
+                    "larghezza": 713,
+                    "altezza": 768
+                },
+                {
+                    "file": "007.jpg",
+                    "larghezza": 713,
+                    "altezza": 768
+                },
+                {
+                    "file": "008.jpg",
+                    "larghezza": 713,
+                    "altezza": 768
+                },
+                {
+                    "file": "009.jpg",
+                    "larghezza": 713,
+                    "altezza": 768
+                },
+                {
+                    "file": "010.jpg",
+                    "larghezza": 713,
+                    "altezza": 768
+                },
+                {
+                    "file": "011.jpg",
+                    "larghezza": 713,
+                    "altezza": 768
+                },
+                {
+                    "file": "012.jpg",
+                    "larghezza": 899,
+                    "altezza": 566
+                }
+            ]
+        }
+    ]
+}

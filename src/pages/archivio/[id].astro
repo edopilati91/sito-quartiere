@@ -1,0 +1,210 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection } from 'astro:content';
+import Bottone from '../../components/Bottone.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export const getStaticPaths = (async () => {
+    const album = (await getCollection('archivio')).sort((a, b) => a.data.ordine - b.data.ordine);
+    return album.map((a) => {
+        const stessaSezione = album.filter((b) => b.data.sezione === a.data.sezione);
+        const i = stessaSezione.indexOf(a);
+        return { params: { id: a.id }, props: { album: a, prossimo: stessaSezione[(i + 1) % stessaSezione.length] } };
+    });
+}) satisfies GetStaticPaths;
+
+const { album, prossimo } = Astro.props;
+const { titolo, periodo, descrizione, crediti, sezione, video, gruppi } = album.data;
+const baseUrl = import.meta.env.BASE_URL;
+const cartella = `${baseUrl}archivio/${album.id}/`;
+const totale = gruppi.reduce((n, g) => n + g.foto.length, 0);
+const nomeSezione = sezione === 'festa-votiva' ? 'Festa Votiva' : 'Vita del quartiere';
+
+// Number every photo across the groups, for the alt text and the viewer.
+let numero = 0;
+const gruppiNumerati = gruppi.map((g) => ({
+    ...g,
+    foto: g.foto.map((f) => ({ ...f, numero: ++numero })),
+}));
+---
+
+<BaseLayout
+    title={titolo}
+    description={`${titolo}${periodo ? ` (${periodo})` : ''}: ${totale} foto dall'archivio del Quartiere San Fortunato.`}
+>
+    <header class="mx-auto max-w-7xl px-4 pt-14 sm:px-8">
+        <p>
+            <a href={`${baseUrl}archivio/#${sezione}`} class="text-neutral-600 underline-offset-4 hover:underline">
+                ← Archivio fotografico
+            </a>
+        </p>
+        <p class="occhiello mt-10 text-verde">{nomeSezione}</p>
+        <h1 class="mt-3 text-4xl font-normal leading-tight sm:text-6xl">{titolo}</h1>
+        <p class="mt-4 text-lg text-neutral-700">
+            {periodo && <>{periodo} · </>}
+            {totale} foto
+        </p>
+        {descrizione && <p class="mt-4 max-w-2xl text-xl italic text-neutral-700">{descrizione}</p>}
+        {crediti && <p class="mt-2 text-neutral-600">{crediti}</p>}
+    </header>
+
+    {
+        video && (
+            <div class="mx-auto mt-12 max-w-4xl px-4 sm:px-8">
+                <div class="aspect-video bg-black">
+                    <iframe
+                        src={`https://www.youtube-nocookie.com/embed/${video}`}
+                        title={`Video: ${titolo}`}
+                        loading="lazy"
+                        allow="encrypted-media; fullscreen; picture-in-picture"
+                        allowfullscreen
+                        class="size-full"
+                    />
+                </div>
+            </div>
+        )
+    }
+
+    <div class="mx-auto max-w-7xl px-4 pb-24 pt-12 sm:px-8">
+        {
+            gruppiNumerati.map((g) => (
+                <section class="mt-12 first:mt-0">
+                    {g.titolo && <h2 class="mb-6 border-b border-black/10 pb-3 text-3xl font-normal">{g.titolo}</h2>}
+                    <ul class="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 lg:grid-cols-4">
+                        {g.foto.map((f) => (
+                            <li>
+                                <a
+                                    href={`${cartella}${f.file}`}
+                                    class="foto-archivio group block aspect-[4/3] overflow-hidden bg-verde-tenue"
+                                    data-larghezza={f.larghezza}
+                                    data-altezza={f.altezza}
+                                >
+                                    <img
+                                        src={`${cartella}min/${f.file}`}
+                                        alt={`${titolo}${g.titolo ? `, ${g.titolo}` : ''}: foto ${f.numero} di ${totale}`}
+                                        width={f.larghezza}
+                                        height={f.altezza}
+                                        loading="lazy"
+                                        decoding="async"
+                                        class="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+            ))
+        }
+    </div>
+
+    <section class="bg-verde-tenue">
+        <div class="mx-auto max-w-3xl px-4 py-20 text-center sm:px-8">
+            <p class="occhiello text-verde">Prossimo album</p>
+            <p class="mt-4 text-3xl font-normal sm:text-4xl">{prossimo.data.titolo}</p>
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <Bottone href={`${baseUrl}archivio/${prossimo.id}/`}>Guarda le foto</Bottone>
+                <Bottone href={`${baseUrl}archivio/`} variante="vuoto">Tutto l’archivio</Bottone>
+            </div>
+        </div>
+    </section>
+
+    <dialog
+        id="visore"
+        aria-label="Visore delle foto"
+        class="m-0 h-dvh max-h-none w-screen max-w-none bg-black p-0 text-white backdrop:bg-black/80"
+    >
+        <div class="flex h-full flex-col">
+            <div class="flex items-center justify-between gap-4 px-4 py-3 sm:px-6">
+                <p class="contatore text-lg" aria-live="polite"></p>
+                <button
+                    type="button"
+                    class="chiudi flex size-12 items-center justify-center rounded-full hover:bg-white/10"
+                    autofocus
+                >
+                    <span class="sr-only">Chiudi</span>
+                    <svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M6 6l12 12M18 6 6 18"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="relative flex min-h-0 flex-1 items-center justify-center px-2 pb-4 sm:px-20">
+                <img class="max-h-full max-w-full object-contain" alt="" />
+                <button
+                    type="button"
+                    data-passo="-1"
+                    class="absolute left-2 top-1/2 flex size-12 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 hover:bg-white/15 sm:left-4"
+                >
+                    <span class="sr-only">Foto precedente</span>
+                    <svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M15 5l-7 7 7 7"></path>
+                    </svg>
+                </button>
+                <button
+                    type="button"
+                    data-passo="1"
+                    class="absolute right-2 top-1/2 flex size-12 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 hover:bg-white/15 sm:right-4"
+                >
+                    <span class="sr-only">Foto successiva</span>
+                    <svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </dialog>
+</BaseLayout>
+
+<script>
+    // Full-screen viewer: without JavaScript each thumbnail simply links to the full photo.
+    const visore = document.querySelector<HTMLDialogElement>('#visore');
+    const link = [...document.querySelectorAll<HTMLAnchorElement>('.foto-archivio')];
+
+    if (visore && link.length) {
+        const immagine = visore.querySelector('img')!;
+        const contatore = visore.querySelector('.contatore')!;
+        let attuale = 0;
+
+        const mostra = (i: number) => {
+            attuale = (i + link.length) % link.length;
+            const a = link[attuale];
+            immagine.src = a.href;
+            immagine.width = Number(a.dataset.larghezza);
+            immagine.height = Number(a.dataset.altezza);
+            immagine.alt = a.querySelector('img')?.alt ?? '';
+            contatore.textContent = `${attuale + 1} / ${link.length}`;
+            // Load the next photo in advance.
+            new Image().src = link[(attuale + 1) % link.length].href;
+        };
+
+        link.forEach((a, i) =>
+            a.addEventListener('click', (evento) => {
+                evento.preventDefault();
+                mostra(i);
+                visore.showModal();
+            }),
+        );
+
+        for (const bottone of visore.querySelectorAll<HTMLButtonElement>('[data-passo]')) {
+            bottone.addEventListener('click', () => mostra(attuale + Number(bottone.dataset.passo)));
+        }
+        visore.querySelector('.chiudi')!.addEventListener('click', () => visore.close());
+
+        visore.addEventListener('keydown', (evento) => {
+            if (evento.key === 'ArrowLeft') mostra(attuale - 1);
+            if (evento.key === 'ArrowRight') mostra(attuale + 1);
+        });
+
+        // Swipe left and right on phones.
+        let inizioX: number | null = null;
+        visore.addEventListener('touchstart', (evento) => (inizioX = evento.touches[0].clientX), { passive: true });
+        visore.addEventListener('touchend', (evento) => {
+            if (inizioX === null) return;
+            const delta = evento.changedTouches[0].clientX - inizioX;
+            if (Math.abs(delta) > 50) mostra(attuale + (delta < 0 ? 1 : -1));
+            inizioX = null;
+        });
+
+        // When the viewer closes, return focus to the photo that was open.
+        visore.addEventListener('close', () => link[attuale].focus());
+    }
+</script>

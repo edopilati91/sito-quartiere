@@ -1,0 +1,27 @@
+{
+    "titolo": "Come si costruiscono i “baloni”",
+    "periodo": "1997",
+    "sezione": "festa-votiva",
+    "ordine": 14,
+    "gruppi": [
+        {
+            "foto": [
+                {
+                    "file": "001.jpg",
+                    "larghezza": 413,
+                    "altezza": 600
+                },
+                {
+                    "file": "002.jpg",
+                    "larghezza": 413,
+                    "altezza": 600
+                },
+                {
+                    "file": "003.jpg",
+                    "larghezza": 800,
+                    "altezza": 551
+                }
+            ]
+        }
+    ]
+}

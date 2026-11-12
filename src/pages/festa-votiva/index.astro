@@ -4,6 +4,7 @@ import { getCollection } from 'astro:content';
 import cucina from '../../assets/storia/cucina-sagra.jpg';
 import processione from '../../assets/storia/processione-luminarie.jpg';
 import sagre from '../../assets/storia/banda-chiostro.jpg';
+import Bottone from '../../components/Bottone.astro';
 import DueFoto from '../../components/DueFoto.astro';
 import TestataPagina from '../../components/TestataPagina.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -80,6 +81,17 @@ const articles = (await getCollection('storia')).sort((a, b) => a.data.order - b
                 ))
             }
         </ul>
+    </section>
+
+    <section class="mx-auto max-w-3xl px-4 pb-24 text-center sm:px-8 lg:pb-32">
+        <h2 class="rivela text-4xl font-normal sm:text-5xl">Le foto e i libretti</h2>
+        <p class="mt-6 text-lg leading-relaxed text-neutral-700">
+            Le immagini delle feste degli ultimi decenni, dalla preparazione dei “baloni” alla processione, e i
+            libretti della Festa dal 2014 a oggi.
+        </p>
+        <div class="mt-8">
+            <Bottone href={`${baseUrl}archivio/#festa-votiva`}>Apri l’archivio</Bottone>
+        </div>
     </section>
 
     <section class="bg-verde-tenue">

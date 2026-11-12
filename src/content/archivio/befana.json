@@ -1,0 +1,1388 @@
+{
+    "titolo": "Feste della Befana",
+    "periodo": "2000–2025",
+    "sezione": "quartiere",
+    "ordine": 4,
+    "gruppi": [
+        {
+            "titolo": "2025",
+            "foto": [
+                {
+                    "file": "001.jpg",
+                    "larghezza": 1200,
+                    "altezza": 674
+                },
+                {
+                    "file": "002.jpg",
+                    "larghezza": 843,
+                    "altezza": 1165
+                },
+                {
+                    "file": "003.jpg",
+                    "larghezza": 1200,
+                    "altezza": 675
+                },
+                {
+                    "file": "004.jpg",
+                    "larghezza": 675,
+                    "altezza": 1200
+                },
+                {
+                    "file": "005.jpg",
+                    "larghezza": 675,
+                    "altezza": 1200
+                },
+                {
+                    "file": "006.jpg",
+                    "larghezza": 675,
+                    "altezza": 1200
+                },
+                {
+                    "file": "007.jpg",
+                    "larghezza": 675,
+                    "altezza": 1200
+                },
+                {
+                    "file": "008.jpg",
+                    "larghezza": 675,
+                    "altezza": 1200
+                },
+                {
+                    "file": "009.jpg",
+                    "larghezza": 1200,
+                    "altezza": 675
+                },
+                {
+                    "file": "010.jpg",
+                    "larghezza": 1200,
+                    "altezza": 675
+                },
+                {
+                    "file": "011.jpg",
+                    "larghezza": 1200,
+                    "altezza": 675
+                },
+                {
+                    "file": "012.jpg",
+                    "larghezza": 1200,
+                    "altezza": 675
+                },
+                {
+                    "file": "013.jpg",
+                    "larghezza": 1200,
+                    "altezza": 675
+                }
+            ]
+        },
+        {
+            "titolo": "2020",
+            "foto": [
+                {
+                    "file": "014.jpg",
+                    "larghezza": 900,
+                    "altezza": 1200
+                },
+                {
+                    "file": "015.jpg",
+                    "larghezza": 900,
+                    "altezza": 1200
+                },
+                {
+                    "file": "016.jpg",
+                    "larghezza": 1200,
+                    "altezza": 900
+                },
+                {
+                    "file": "017.jpg",
+                    "larghezza": 1200,
+                    "altezza": 900
+                },
+                {
+                    "file": "018.jpg",
+                    "larghezza": 900,
+                    "altezza": 1200
+                },
+                {
+                    "file": "019.jpg",
+                    "larghezza": 900,
+                    "altezza": 1200
+                },
+                {
+                    "file": "020.jpg",
+                    "larghezza": 1200,
+                    "altezza": 900
+                },
+                {
+                    "file": "021.jpg",
+                    "larghezza": 900,
+                    "altezza": 1200
+                },
+                {
+                    "file": "022.jpg",
+                    "larghezza": 1200,
+                    "altezza": 900
+                },
+                {
+                    "file": "023.jpg",
+                    "larghezza": 1200,
+                    "altezza": 899
+                },
+                {
+                    "file": "024.jpg",
+                    "larghezza": 1200,
+                    "altezza": 899
+                },
+                {
+                    "file": "025.jpg",
+                    "larghezza": 1200,
+                    "altezza": 900
+                },
+                {
+                    "file": "026.jpg",
+                    "larghezza": 1200,
+                    "altezza": 900
+                },
+                {
+                    "file": "027.jpg",
+                    "larghezza": 1200,
+                    "altezza": 900
+                },
+                {
+                    "file": "028.jpg",
+                    "larghezza": 1200,
+                    "altezza": 900
+                },
+                {
+                    "file": "029.jpg",
+                    "larghezza": 1200,
+                    "altezza": 900
+                },
+                {
+                    "file": "030.jpg",
+                    "larghezza": 1200,
+                    "altezza": 900
+                },
+                {
+                    "file": "031.jpg",
+                    "larghezza": 900,
+                    "altezza": 1200
+                }
+            ]
+        },
+        {
+            "titolo": "2019",
+            "foto": [
+                {
+                    "file": "032.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "033.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "034.jpg",
+                    "larghezza": 768,
+                    "altezza": 1024
+                },
+                {
+                    "file": "035.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "036.jpg",
+                    "larghezza": 897,
+                    "altezza": 631
+                },
+                {
+                    "file": "037.jpg",
+                    "larghezza": 768,
+                    "altezza": 1024
+                },
+                {
+                    "file": "038.jpg",
+                    "larghezza": 768,
+                    "altezza": 1024
+                },
+                {
+                    "file": "039.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "040.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "041.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "042.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "043.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "044.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "045.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "046.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "047.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "048.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                }
+            ]
+        },
+        {
+            "titolo": "2018",
+            "foto": [
+                {
+                    "file": "049.jpg",
+                    "larghezza": 768,
+                    "altezza": 1024
+                },
+                {
+                    "file": "050.jpg",
+                    "larghezza": 768,
+                    "altezza": 1024
+                },
+                {
+                    "file": "051.jpg",
+                    "larghezza": 576,
+                    "altezza": 1024
+                },
+                {
+                    "file": "052.jpg",
+                    "larghezza": 768,
+                    "altezza": 1024
+                },
+                {
+                    "file": "053.jpg",
+                    "larghezza": 1024,
+                    "altezza": 576
+                },
+                {
+                    "file": "054.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "055.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "056.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "057.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "058.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "059.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "060.jpg",
+                    "larghezza": 768,
+                    "altezza": 1024
+                },
+                {
+                    "file": "061.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "062.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "063.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                }
+            ]
+        },
+        {
+            "titolo": "2017",
+            "foto": [
+                {
+                    "file": "064.jpg",
+                    "larghezza": 768,
+                    "altezza": 1024
+                },
+                {
+                    "file": "065.jpg",
+                    "larghezza": 768,
+                    "altezza": 1024
+                },
+                {
+                    "file": "066.jpg",
+                    "larghezza": 768,
+                    "altezza": 1024
+                },
+                {
+                    "file": "067.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "068.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "069.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "070.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "071.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "072.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "073.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "074.jpg",
+                    "larghezza": 768,
+                    "altezza": 1024
+                },
+                {
+                    "file": "075.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "076.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "077.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "078.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "079.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "080.jpg",
+                    "larghezza": 768,
+                    "altezza": 1024
+                },
+                {
+                    "file": "081.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "082.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "083.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "084.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "085.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "086.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "087.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "088.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "089.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "090.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "091.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "092.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "093.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "094.jpg",
+                    "larghezza": 768,
+                    "altezza": 1024
+                },
+                {
+                    "file": "095.jpg",
+                    "larghezza": 768,
+                    "altezza": 1024
+                },
+                {
+                    "file": "096.jpg",
+                    "larghezza": 768,
+                    "altezza": 1024
+                },
+                {
+                    "file": "097.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "098.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "099.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "100.jpg",
+                    "larghezza": 768,
+                    "altezza": 1024
+                }
+            ]
+        },
+        {
+            "titolo": "2016",
+            "foto": [
+                {
+                    "file": "101.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "102.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "103.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "104.jpg",
+                    "larghezza": 768,
+                    "altezza": 1024
+                },
+                {
+                    "file": "105.jpg",
+                    "larghezza": 768,
+                    "altezza": 1024
+                },
+                {
+                    "file": "106.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "107.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "108.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "109.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "110.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "111.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "112.jpg",
+                    "larghezza": 768,
+                    "altezza": 1024
+                },
+                {
+                    "file": "113.jpg",
+                    "larghezza": 768,
+                    "altezza": 1024
+                },
+                {
+                    "file": "114.jpg",
+                    "larghezza": 768,
+                    "altezza": 1024
+                },
+                {
+                    "file": "115.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "116.jpg",
+                    "larghezza": 768,
+                    "altezza": 1024
+                },
+                {
+                    "file": "117.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "118.jpg",
+                    "larghezza": 768,
+                    "altezza": 1024
+                },
+                {
+                    "file": "119.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "120.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "121.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "122.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "123.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "124.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "125.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "126.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "127.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                }
+            ]
+        },
+        {
+            "titolo": "2015",
+            "foto": [
+                {
+                    "file": "128.jpg",
+                    "larghezza": 982,
+                    "altezza": 768
+                },
+                {
+                    "file": "129.jpg",
+                    "larghezza": 581,
+                    "altezza": 768
+                },
+                {
+                    "file": "130.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "131.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "132.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "133.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "134.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "135.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "136.jpg",
+                    "larghezza": 576,
+                    "altezza": 768
+                },
+                {
+                    "file": "137.jpg",
+                    "larghezza": 576,
+                    "altezza": 768
+                },
+                {
+                    "file": "138.jpg",
+                    "larghezza": 576,
+                    "altezza": 768
+                },
+                {
+                    "file": "139.jpg",
+                    "larghezza": 576,
+                    "altezza": 768
+                },
+                {
+                    "file": "140.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "141.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "142.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "143.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "144.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "145.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "146.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "147.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "148.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "149.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "150.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "151.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "152.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "153.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "154.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "155.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "156.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "157.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "158.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "159.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "160.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "161.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "162.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "163.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "164.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "165.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "166.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "167.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                }
+            ]
+        },
+        {
+            "titolo": "2014",
+            "foto": [
+                {
+                    "file": "168.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "169.jpg",
+                    "larghezza": 576,
+                    "altezza": 768
+                },
+                {
+                    "file": "170.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "171.jpg",
+                    "larghezza": 576,
+                    "altezza": 768
+                },
+                {
+                    "file": "172.jpg",
+                    "larghezza": 576,
+                    "altezza": 768
+                },
+                {
+                    "file": "173.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "174.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "175.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "176.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "177.jpg",
+                    "larghezza": 576,
+                    "altezza": 768
+                },
+                {
+                    "file": "178.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "179.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "180.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "181.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "182.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "183.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "184.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "185.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "186.jpg",
+                    "larghezza": 1024,
+                    "altezza": 693
+                },
+                {
+                    "file": "187.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "188.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "189.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "190.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "191.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "192.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "193.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "194.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "195.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "196.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "197.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "198.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                }
+            ]
+        },
+        {
+            "titolo": "2013",
+            "foto": [
+                {
+                    "file": "199.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "200.jpg",
+                    "larghezza": 576,
+                    "altezza": 768
+                },
+                {
+                    "file": "201.jpg",
+                    "larghezza": 576,
+                    "altezza": 768
+                },
+                {
+                    "file": "202.jpg",
+                    "larghezza": 576,
+                    "altezza": 768
+                },
+                {
+                    "file": "203.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "204.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "205.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "206.jpg",
+                    "larghezza": 576,
+                    "altezza": 768
+                }
+            ]
+        },
+        {
+            "titolo": "2012",
+            "foto": [
+                {
+                    "file": "207.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "208.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "209.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "210.jpg",
+                    "larghezza": 576,
+                    "altezza": 768
+                },
+                {
+                    "file": "211.jpg",
+                    "larghezza": 576,
+                    "altezza": 768
+                },
+                {
+                    "file": "212.jpg",
+                    "larghezza": 576,
+                    "altezza": 768
+                },
+                {
+                    "file": "213.jpg",
+                    "larghezza": 576,
+                    "altezza": 768
+                },
+                {
+                    "file": "214.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "215.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "216.jpg",
+                    "larghezza": 576,
+                    "altezza": 768
+                },
+                {
+                    "file": "217.jpg",
+                    "larghezza": 576,
+                    "altezza": 768
+                },
+                {
+                    "file": "218.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "219.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "220.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "221.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "222.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "223.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "224.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "225.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "226.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "227.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "228.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "229.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "230.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "231.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "232.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "233.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                }
+            ]
+        },
+        {
+            "titolo": "2007",
+            "foto": [
+                {
+                    "file": "234.jpg",
+                    "larghezza": 800,
+                    "altezza": 600
+                },
+                {
+                    "file": "235.jpg",
+                    "larghezza": 800,
+                    "altezza": 600
+                },
+                {
+                    "file": "236.jpg",
+                    "larghezza": 450,
+                    "altezza": 600
+                },
+                {
+                    "file": "237.jpg",
+                    "larghezza": 800,
+                    "altezza": 600
+                },
+                {
+                    "file": "238.jpg",
+                    "larghezza": 800,
+                    "altezza": 600
+                },
+                {
+                    "file": "239.jpg",
+                    "larghezza": 450,
+                    "altezza": 600
+                },
+                {
+                    "file": "240.jpg",
+                    "larghezza": 800,
+                    "altezza": 600
+                },
+                {
+                    "file": "241.jpg",
+                    "larghezza": 800,
+                    "altezza": 600
+                },
+                {
+                    "file": "242.jpg",
+                    "larghezza": 800,
+                    "altezza": 600
+                },
+                {
+                    "file": "243.jpg",
+                    "larghezza": 800,
+                    "altezza": 600
+                },
+                {
+                    "file": "244.jpg",
+                    "larghezza": 800,
+                    "altezza": 600
+                },
+                {
+                    "file": "245.jpg",
+                    "larghezza": 800,
+                    "altezza": 600
+                },
+                {
+                    "file": "246.jpg",
+                    "larghezza": 800,
+                    "altezza": 600
+                },
+                {
+                    "file": "247.jpg",
+                    "larghezza": 800,
+                    "altezza": 600
+                },
+                {
+                    "file": "248.jpg",
+                    "larghezza": 450,
+                    "altezza": 600
+                },
+                {
+                    "file": "249.jpg",
+                    "larghezza": 450,
+                    "altezza": 600
+                },
+                {
+                    "file": "250.jpg",
+                    "larghezza": 450,
+                    "altezza": 600
+                },
+                {
+                    "file": "251.jpg",
+                    "larghezza": 450,
+                    "altezza": 600
+                },
+                {
+                    "file": "252.jpg",
+                    "larghezza": 450,
+                    "altezza": 600
+                },
+                {
+                    "file": "253.jpg",
+                    "larghezza": 800,
+                    "altezza": 600
+                },
+                {
+                    "file": "254.jpg",
+                    "larghezza": 800,
+                    "altezza": 600
+                },
+                {
+                    "file": "255.jpg",
+                    "larghezza": 800,
+                    "altezza": 600
+                },
+                {
+                    "file": "256.jpg",
+                    "larghezza": 800,
+                    "altezza": 600
+                },
+                {
+                    "file": "257.jpg",
+                    "larghezza": 800,
+                    "altezza": 600
+                },
+                {
+                    "file": "258.jpg",
+                    "larghezza": 800,
+                    "altezza": 600
+                },
+                {
+                    "file": "259.jpg",
+                    "larghezza": 800,
+                    "altezza": 600
+                },
+                {
+                    "file": "260.jpg",
+                    "larghezza": 800,
+                    "altezza": 600
+                },
+                {
+                    "file": "261.jpg",
+                    "larghezza": 800,
+                    "altezza": 600
+                },
+                {
+                    "file": "262.jpg",
+                    "larghezza": 800,
+                    "altezza": 600
+                }
+            ]
+        },
+        {
+            "titolo": "2000",
+            "foto": [
+                {
+                    "file": "263.jpg",
+                    "larghezza": 800,
+                    "altezza": 544
+                },
+                {
+                    "file": "264.jpg",
+                    "larghezza": 408,
+                    "altezza": 600
+                }
+            ]
+        }
+    ]
+}

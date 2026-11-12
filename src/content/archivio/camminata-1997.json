@@ -1,0 +1,67 @@
+{
+    "titolo": "Camminata in montagna",
+    "periodo": "1997",
+    "sezione": "quartiere",
+    "ordine": 8,
+    "gruppi": [
+        {
+            "foto": [
+                {
+                    "file": "001.jpg",
+                    "larghezza": 800,
+                    "altezza": 548
+                },
+                {
+                    "file": "002.jpg",
+                    "larghezza": 800,
+                    "altezza": 548
+                },
+                {
+                    "file": "003.jpg",
+                    "larghezza": 800,
+                    "altezza": 548
+                },
+                {
+                    "file": "004.jpg",
+                    "larghezza": 800,
+                    "altezza": 548
+                },
+                {
+                    "file": "005.jpg",
+                    "larghezza": 411,
+                    "altezza": 600
+                },
+                {
+                    "file": "006.jpg",
+                    "larghezza": 411,
+                    "altezza": 600
+                },
+                {
+                    "file": "007.jpg",
+                    "larghezza": 411,
+                    "altezza": 600
+                },
+                {
+                    "file": "008.jpg",
+                    "larghezza": 411,
+                    "altezza": 600
+                },
+                {
+                    "file": "009.jpg",
+                    "larghezza": 411,
+                    "altezza": 600
+                },
+                {
+                    "file": "010.jpg",
+                    "larghezza": 411,
+                    "altezza": 600
+                },
+                {
+                    "file": "011.jpg",
+                    "larghezza": 800,
+                    "altezza": 548
+                }
+            ]
+        }
+    ]
+}

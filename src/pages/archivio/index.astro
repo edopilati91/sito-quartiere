@@ -1,0 +1,112 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import sagre from '../../assets/storia/banda-chiostro.jpg';
+import TestataPagina from '../../components/TestataPagina.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const baseUrl = import.meta.env.BASE_URL;
+
+const album = (await getCollection('archivio')).sort((a, b) => a.data.ordine - b.data.ordine);
+const documenti = (await getCollection('documenti')).sort((a, b) => b.data.anno - a.data.anno);
+
+const sezioni = [
+    {
+        id: 'festa-votiva',
+        titolo: 'Festa Votiva',
+        album: album.filter((a) => a.data.sezione === 'festa-votiva'),
+        documentiTitolo: 'I libretti della Festa',
+        documenti: documenti.filter((d) => d.data.tipo === 'libretto'),
+    },
+    {
+        id: 'quartiere',
+        titolo: 'Vita del quartiere',
+        album: album.filter((a) => a.data.sezione === 'quartiere'),
+        documentiTitolo: 'Il Giornalino',
+        documenti: documenti.filter((d) => d.data.tipo === 'giornalino'),
+    },
+];
+
+const contaFoto = (a: CollectionEntry<'archivio'>) => a.data.gruppi.reduce((n, g) => n + g.foto.length, 0);
+const copertina = (a: CollectionEntry<'archivio'>) => `${baseUrl}archivio/${a.id}/min/${a.data.gruppi[0].foto[0].file}`;
+const megabyte = (byte: number) =>
+    `${new Intl.NumberFormat('it-IT', { maximumFractionDigits: 1 }).format(byte / 1_000_000)} MB`;
+---
+
+<BaseLayout
+    title="Archivio fotografico"
+    description="Le foto della Festa Votiva e della vita del Quartiere San Fortunato, con i libretti della Festa e il Giornalino."
+>
+    <TestataPagina titolo="Archivio fotografico" occhiello="Foto, libretti e ricordi" immagine={sagre} />
+
+    <nav aria-label="Sezioni dell'archivio" class="mx-auto flex max-w-7xl flex-wrap justify-center gap-x-8 gap-y-2 px-4 pt-16 text-lg sm:px-8">
+        {
+            sezioni.map((s) => (
+                <>
+                    <a href={`#${s.id}`} class="underline-offset-4 hover:underline">{s.titolo}</a>
+                    <a href={`#${s.id}-documenti`} class="underline-offset-4 hover:underline">{s.documentiTitolo}</a>
+                </>
+            ))
+        }
+    </nav>
+
+    {
+        sezioni.map((s) => (
+            <>
+                <section id={s.id} class="mx-auto max-w-7xl scroll-mt-24 px-4 py-20 sm:px-8 lg:py-28">
+                    <h2 class="rivela text-center text-4xl font-normal sm:text-5xl">{s.titolo}</h2>
+                    <ul class="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+                        {s.album.map((a) => (
+                            <li>
+                                <a href={`${baseUrl}archivio/${a.id}/`} class="group block">
+                                    <div class="aspect-[4/3] overflow-hidden bg-verde-tenue">
+                                        <img
+                                            src={copertina(a)}
+                                            alt=""
+                                            loading="lazy"
+                                            decoding="async"
+                                            class="size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                        />
+                                    </div>
+                                    <h3 class="mt-5 text-2xl leading-snug group-hover:text-verde">{a.data.titolo}</h3>
+                                    <p class="mt-1 text-neutral-600">
+                                        {a.data.periodo && <>{a.data.periodo} · </>}
+                                        {contaFoto(a)} foto
+                                        {a.data.video && <> e un video</>}
+                                    </p>
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+
+                <section id={`${s.id}-documenti`} class="scroll-mt-24 bg-verde-tenue">
+                    <div class="mx-auto max-w-7xl px-4 py-20 sm:px-8">
+                        <h2 class="rivela text-center text-4xl font-normal sm:text-5xl">{s.documentiTitolo}</h2>
+                        <p class="mx-auto mt-4 max-w-xl text-center text-neutral-700">
+                            Le pagine originali, in PDF da sfogliare o scaricare.
+                        </p>
+                        <ul class="mt-12 grid grid-cols-2 items-end gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4">
+                            {s.documenti.map((d) => (
+                                <li>
+                                    <a href={`${baseUrl}archivio/pdf/${d.data.file}`} class="group block">
+                                        <img
+                                            src={`${baseUrl}archivio/pdf/${d.data.file.replace(/\.pdf$/, '.jpg')}`}
+                                            alt=""
+                                            loading="lazy"
+                                            decoding="async"
+                                            class="h-auto w-full bg-carta shadow-[0_20px_40px_-20px_rgb(0_0_0/0.45)] transition-transform duration-500 group-hover:-translate-y-1"
+                                        />
+                                        <p class="mt-4 text-xl leading-snug group-hover:text-verde">{d.data.titolo}</p>
+                                        <p class="text-sm text-neutral-600">
+                                            PDF, {d.data.pagine} pagine, {megabyte(d.data.peso)}
+                                        </p>
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </section>
+            </>
+        ))
+    }
+</BaseLayout>

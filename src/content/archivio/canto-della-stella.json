@@ -1,0 +1,103 @@
+{
+    "titolo": "Canto della Stella",
+    "periodo": "2010–2016",
+    "sezione": "quartiere",
+    "ordine": 3,
+    "gruppi": [
+        {
+            "titolo": "2016",
+            "foto": [
+                {
+                    "file": "001.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                }
+            ]
+        },
+        {
+            "titolo": "2014",
+            "foto": [
+                {
+                    "file": "002.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "003.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "004.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "005.jpg",
+                    "larghezza": 968,
+                    "altezza": 768
+                }
+            ]
+        },
+        {
+            "titolo": "2013",
+            "foto": [
+                {
+                    "file": "006.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "007.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "008.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                }
+            ]
+        },
+        {
+            "titolo": "2012",
+            "foto": [
+                {
+                    "file": "009.jpg",
+                    "larghezza": 1024,
+                    "altezza": 739
+                },
+                {
+                    "file": "010.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                }
+            ]
+        },
+        {
+            "titolo": "2011",
+            "foto": [
+                {
+                    "file": "011.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                },
+                {
+                    "file": "012.jpg",
+                    "larghezza": 1024,
+                    "altezza": 768
+                }
+            ]
+        },
+        {
+            "titolo": "2010",
+            "foto": [
+                {
+                    "file": "013.jpg",
+                    "larghezza": 800,
+                    "altezza": 600
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,52 @@
+{
+    "titolo": "Torneo di calcio",
+    "periodo": "Ottobre 1985",
+    "sezione": "festa-votiva",
+    "ordine": 16,
+    "gruppi": [
+        {
+            "foto": [
+                {
+                    "file": "001.jpg",
+                    "larghezza": 800,
+                    "altezza": 509
+                },
+                {
+                    "file": "002.jpg",
+                    "larghezza": 800,
+                    "altezza": 509
+                },
+                {
+                    "file": "003.jpg",
+                    "larghezza": 800,
+                    "altezza": 509
+                },
+                {
+                    "file": "004.jpg",
+                    "larghezza": 800,
+                    "altezza": 509
+                },
+                {
+                    "file": "005.jpg",
+                    "larghezza": 800,
+                    "altezza": 509
+                },
+                {
+                    "file": "006.jpg",
+                    "larghezza": 800,
+                    "altezza": 509
+                },
+                {
+                    "file": "007.jpg",
+                    "larghezza": 800,
+                    "altezza": 509
+                },
+                {
+                    "file": "008.jpg",
+                    "larghezza": 800,
+                    "altezza": 509
+                }
+            ]
+        }
+    ]
+}

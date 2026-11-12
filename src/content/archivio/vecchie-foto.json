@@ -1,0 +1,36 @@
+{
+    "titolo": "Vecchie immagini della sagra",
+    "sezione": "festa-votiva",
+    "ordine": 15,
+    "gruppi": [
+        {
+            "foto": [
+                {
+                    "file": "001.jpg",
+                    "larghezza": 1024,
+                    "altezza": 698
+                },
+                {
+                    "file": "002.jpg",
+                    "larghezza": 1024,
+                    "altezza": 698
+                },
+                {
+                    "file": "003.jpg",
+                    "larghezza": 1024,
+                    "altezza": 817
+                },
+                {
+                    "file": "004.jpg",
+                    "larghezza": 620,
+                    "altezza": 889
+                },
+                {
+                    "file": "005.jpg",
+                    "larghezza": 900,
+                    "altezza": 569
+                }
+            ]
+        }
+    ]
+}

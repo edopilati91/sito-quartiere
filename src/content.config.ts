@@ -1,5 +1,5 @@
 import { defineCollection } from 'astro:content';
-import { glob } from 'astro/loaders';
+import { file, glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
 // Historical articles about the Festa Votiva, shown under /festa-votiva/<file name>/.
@@ -20,4 +20,51 @@ const storia = defineCollection({
         }),
 });
 
-export const collections = { storia };
+// Photo albums copied from the old site, shown under /archivio/<file name>/.
+// The photos are in public/archivio/<file name>/ (served as they are, not processed by Astro).
+const archivio = defineCollection({
+    loader: glob({ pattern: '*.json', base: './src/content/archivio' }),
+    schema: z.object({
+        titolo: z.string(),
+        // Date or period shown under the title, e.g. "1980 circa".
+        periodo: z.string().optional(),
+        descrizione: z.string().optional(),
+        // Who took the photos.
+        crediti: z.string().optional(),
+        // 'festa-votiva' or 'quartiere': the section of the archive page.
+        sezione: z.enum(['festa-votiva', 'quartiere']),
+        // Position in its section (lowest first).
+        ordine: z.number(),
+        // YouTube video id, shown above the photos.
+        video: z.string().optional(),
+        // Photos, optionally split under headings (e.g. one group per year).
+        gruppi: z.array(
+            z.object({
+                titolo: z.string().optional(),
+                foto: z.array(
+                    z.object({
+                        file: z.string(),
+                        larghezza: z.number(),
+                        altezza: z.number(),
+                    }),
+                ),
+            }),
+        ),
+    }),
+});
+
+// Festa Votiva booklets and issues of the quartiere newsletter, as PDF files in public/archivio/pdf/.
+const documenti = defineCollection({
+    loader: file('./src/content/documenti.json'),
+    schema: z.object({
+        titolo: z.string(),
+        tipo: z.enum(['libretto', 'giornalino']),
+        anno: z.number(),
+        file: z.string(),
+        pagine: z.number(),
+        // File size in bytes, shown next to the download link.
+        peso: z.number(),
+    }),
+});
+
+export const collections = { storia, archivio, documenti };

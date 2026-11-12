@@ -1,0 +1,128 @@
+[
+    {
+        "id": "libretto-2026",
+        "titolo": "Libretto 2026",
+        "tipo": "libretto",
+        "anno": 2026,
+        "file": "libretto-2026.pdf",
+        "pagine": 20,
+        "peso": 4113310
+    },
+    {
+        "id": "libretto-2025",
+        "titolo": "Libretto 2025",
+        "tipo": "libretto",
+        "anno": 2025,
+        "file": "libretto-2025.pdf",
+        "pagine": 20,
+        "peso": 4917812
+    },
+    {
+        "id": "libretto-2024",
+        "titolo": "Libretto 2024",
+        "tipo": "libretto",
+        "anno": 2024,
+        "file": "libretto-2024.pdf",
+        "pagine": 20,
+        "peso": 4647498
+    },
+    {
+        "id": "libretto-2023",
+        "titolo": "Libretto 2023",
+        "tipo": "libretto",
+        "anno": 2023,
+        "file": "libretto-2023.pdf",
+        "pagine": 16,
+        "peso": 2584037
+    },
+    {
+        "id": "libretto-2022",
+        "titolo": "Libretto 2022",
+        "tipo": "libretto",
+        "anno": 2022,
+        "file": "libretto-2022.pdf",
+        "pagine": 16,
+        "peso": 2509937
+    },
+    {
+        "id": "libretto-2019",
+        "titolo": "Libretto 2019",
+        "tipo": "libretto",
+        "anno": 2019,
+        "file": "libretto-2019.pdf",
+        "pagine": 16,
+        "peso": 3539337
+    },
+    {
+        "id": "libretto-2018",
+        "titolo": "Libretto 2018",
+        "tipo": "libretto",
+        "anno": 2018,
+        "file": "libretto-2018.pdf",
+        "pagine": 16,
+        "peso": 2599349
+    },
+    {
+        "id": "libretto-2017",
+        "titolo": "Libretto 2017",
+        "tipo": "libretto",
+        "anno": 2017,
+        "file": "libretto-2017.pdf",
+        "pagine": 16,
+        "peso": 2039742
+    },
+    {
+        "id": "libretto-2016",
+        "titolo": "Libretto 2016",
+        "tipo": "libretto",
+        "anno": 2016,
+        "file": "libretto-2016.pdf",
+        "pagine": 16,
+        "peso": 1900904
+    },
+    {
+        "id": "libretto-2015",
+        "titolo": "Libretto 2015",
+        "tipo": "libretto",
+        "anno": 2015,
+        "file": "libretto-2015.pdf",
+        "pagine": 16,
+        "peso": 1869175
+    },
+    {
+        "id": "libretto-2014",
+        "titolo": "Libretto 2014",
+        "tipo": "libretto",
+        "anno": 2014,
+        "file": "libretto-2014.pdf",
+        "pagine": 16,
+        "peso": 2285982
+    },
+    {
+        "id": "giornalino-2013",
+        "titolo": "Giornalino 2013",
+        "tipo": "giornalino",
+        "anno": 2013,
+        "file": "giornalino-2013.pdf",
+        "pagine": 11,
+        "peso": 4015842
+    },
+    {
+        "id": "giornalino-2014",
+        "titolo": "Giornalino 2014",
+        "tipo": "giornalino",
+        "anno": 2014,
+        "file": "giornalino-2014.pdf",
+        "pagine": 24,
+        "peso": 7163107
+    },
+    {
+        "id": "giornalino-2015",
+        "titolo": "Giornalino 2015",
+        "tipo": "giornalino",
+        "anno": 2015,
+        "file": "giornalino-2015.pdf",
+        "pagine": 13,
+        "peso": 2944511
+    }
+]

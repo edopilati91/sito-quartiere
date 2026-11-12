@@ -21,8 +21,10 @@ The project was a Laravel app until October 2026; that code is only in the git h
 ## Architecture
 
 - `src/site.config.ts` — site name, description and language, used by the layout and pages
-- `src/pages/` — one file per route (`index.astro` is `/`, `404.astro` is the not-found page); `festa-votiva/[id].astro` renders the history articles
+- `src/pages/` — one file per route (`index.astro` is `/`, `404.astro` is the not-found page); `festa-votiva/[id].astro` renders the history articles, `archivio/[id].astro` the photo albums (with a full-screen viewer)
 - `src/content.config.ts` and `src/content/storia/` — the `storia` content collection: one Markdown file per history article about the Festa Votiva, copied from the old Jimdo site (quartiere-sanfortunato.com)
+- `src/content/archivio/` and `public/archivio/` — the photo archive copied from the old Jimdo site (about 1,100 photos): one JSON file per album (title, section, photo list with sizes), shown at `/archivio/` and `/archivio/<file name>/`. Each album's photos are in `public/archivio/<file name>/` (at most 1200 px) with 480 px thumbnails in `min/`. They live in `public/` on purpose, so Astro does not process them on every build. To add an album, put the photos and the thumbnails there (e.g. `sips -Z 1200` and `sips -Z 480 -s formatOptions 55`) and write its JSON file.
+- `src/content/documenti.json` and `public/archivio/pdf/` — the Festa Votiva booklets and the quartiere newsletter (Giornalino) as PDF files, each with a `.jpg` cover of the same name
 - `src/assets/` — images processed by Astro (`<Image>`): the logo and the photos
 - `src/components/` — `Bottone` (pill button), `DueFoto` (large photo with a smaller overlapping one), `TestataPagina` (photo banner at the top of inner pages), `Carosello` (horizontal card list with arrows)
 - `src/layouts/BaseLayout.astro` — shared HTML shell: `lang="it"`, meta tags, header and footer. Every page uses it and passes `title` and `description`.

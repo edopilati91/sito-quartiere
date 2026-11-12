@@ -1,0 +1,134 @@
+{
+    "titolo": "Processione 2012",
+    "periodo": "Ottobre 2012",
+    "descrizione": "La processione della Festa Votiva Madonna del Rosario.",
+    "crediti": "Immagini di Adriano Boscato",
+    "sezione": "festa-votiva",
+    "ordine": 10,
+    "gruppi": [
+        {
+            "foto": [
+                {
+                    "file": "001.jpg",
+                    "larghezza": 600,
+                    "altezza": 401
+                },
+                {
+                    "file": "002.jpg",
+                    "larghezza": 600,
+                    "altezza": 401
+                },
+                {
+                    "file": "003.jpg",
+                    "larghezza": 600,
+                    "altezza": 401
+                },
+                {
+                    "file": "004.jpg",
+                    "larghezza": 600,
+                    "altezza": 401
+                },
+                {
+                    "file": "005.jpg",
+                    "larghezza": 600,
+                    "altezza": 401
+                },
+                {
+                    "file": "006.jpg",
+                    "larghezza": 600,
+                    "altezza": 401
+                },
+                {
+                    "file": "007.jpg",
+                    "larghezza": 600,
+                    "altezza": 401
+                },
+                {
+                    "file": "008.jpg",
+                    "larghezza": 600,
+                    "altezza": 401
+                },
+                {
+                    "file": "009.jpg",
+                    "larghezza": 600,
+                    "altezza": 401
+                },
+                {
+                    "file": "010.jpg",
+                    "larghezza": 600,
+                    "altezza": 401
+                },
+                {
+                    "file": "011.jpg",
+                    "larghezza": 600,
+                    "altezza": 401
+                },
+                {
+                    "file": "012.jpg",
+                    "larghezza": 401,
+                    "altezza": 600
+                },
+                {
+                    "file": "013.jpg",
+                    "larghezza": 401,
+                    "altezza": 600
+                },
+                {
+                    "file": "014.jpg",
+                    "larghezza": 401,
+                    "altezza": 600
+                },
+                {
+                    "file": "015.jpg",
+                    "larghezza": 600,
+                    "altezza": 401
+                },
+                {
+                    "file": "016.jpg",
+                    "larghezza": 600,
+                    "altezza": 401
+                },
+                {
+                    "file": "017.jpg",
+                    "larghezza": 600,
+                    "altezza": 401
+                },
+                {
+                    "file": "018.jpg",
+                    "larghezza": 600,
+                    "altezza": 401
+                },
+                {
+                    "file": "019.jpg",
+                    "larghezza": 600,
+                    "altezza": 401
+                },
+                {
+                    "file": "020.jpg",
+                    "larghezza": 401,
+                    "altezza": 600
+                },
+                {
+                    "file": "021.jpg",
+                    "larghezza": 401,
+                    "altezza": 600
+                },
+                {
+                    "file": "022.jpg",
+                    "larghezza": 600,
+                    "altezza": 401
+                },
+                {
+                    "file": "023.jpg",
+                    "larghezza": 600,
+                    "altezza": 401
+                },
+                {
+                    "file": "024.jpg",
+                    "larghezza": 600,
+                    "altezza": 401
+                }
+            ]
+        }
+    ]
+}
