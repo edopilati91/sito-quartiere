@@ -67,4 +67,24 @@ const documenti = defineCollection({
     }),
 });
 
-export const collections = { storia, archivio, documenti };
+// News and announcements, shown under /notizie/<file name>/ and, while current, in the home page.
+const giorno = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'Data nel formato AAAA-MM-GG');
+const notizie = defineCollection({
+    loader: glob({ pattern: '*.md', base: './src/content/notizie' }),
+    schema: ({ image }) =>
+        z.object({
+            titolo: z.string(),
+            // Publication date, YYYY-MM-DD.
+            data: giorno,
+            // One line shown in the lists.
+            riassunto: z.string(),
+            // Last day the news is shown in the home page, YYYY-MM-DD (e.g. the day of the event).
+            // Without it, it stays there (the strip shows at most two rows, the newest first).
+            fino: giorno.optional(),
+            // Flyer, shown next to the text.
+            volantino: image().optional(),
+            volantinoAlt: z.string().optional(),
+        }),
+});
+
+export const collections = { storia, archivio, documenti, notizie };

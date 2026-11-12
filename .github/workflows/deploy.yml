@@ -5,6 +5,9 @@ on:
     branches:
       - main
   workflow_dispatch:
+  # Rebuild every night (about 3:00 in Italy), so news past their "fino" date leave the home page.
+  schedule:
+    - cron: '0 1 * * *'
 
 permissions:
   contents: read

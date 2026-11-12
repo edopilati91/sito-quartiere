@@ -13,34 +13,80 @@ import Bottone from '../components/Bottone.astro';
 import Carosello from '../components/Carosello.astro';
 import DueFoto from '../components/DueFoto.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { notizieInEvidenza } from '../notizie';
 import { siteConfig } from '../site.config';
 
 const baseUrl = import.meta.env.BASE_URL;
 const articles = (await getCollection('storia')).sort((a, b) => a.data.order - b.data.order);
+// The news strip has at most two rows: with more than two current news, the second row links to the others.
+const novita = await notizieInEvidenza();
+const novitaMostrate = novita.length > 2 ? novita.slice(0, 1) : novita;
+const altreNovita = novita.length - novitaMostrate.length;
 ---
 
 <BaseLayout description={siteConfig.description}>
-    <!-- Opening photo with the name in the middle -->
-    <section class="relative flex h-[calc(100svh-5rem)] min-h-[480px] items-center justify-center overflow-hidden text-center text-white">
-        <Image
-            src={processione}
-            alt="Foto storica della processione della Festa Votiva sotto le luminarie di carta"
-            widths={[800]}
-            sizes="100vw"
-            loading="eager"
-            fetchpriority="high"
-            class="zoom-lento absolute inset-0 size-full object-cover"
-        />
-        <div class="absolute inset-0 bg-black/40"></div>
-        <div class="relative px-4">
-            <h1 class="entra font-medium text-5xl sm:text-7xl lg:text-8xl">
-                {siteConfig.name}
-            </h1>
-            <p class="entra mt-6 text-lg font-normal uppercase tracking-wide sm:text-3xl" style="--ritardo: 0.3s">
-                Il quartiere, il monastero, la festa
-            </p>
-        </div>
-    </section>
+    <!-- Opening photo and the news strip together fill the first screen, so the news is seen without scrolling -->
+    <div class="flex h-[calc(100svh-5rem)] min-h-[480px] flex-col">
+        <!-- Opening photo with the name in the middle -->
+        <section class="relative flex flex-1 items-center justify-center overflow-hidden text-center text-white">
+            <Image
+                src={processione}
+                alt="Foto storica della processione della Festa Votiva sotto le luminarie di carta"
+                widths={[800]}
+                sizes="100vw"
+                loading="eager"
+                fetchpriority="high"
+                class="zoom-lento absolute inset-0 size-full object-cover"
+            />
+            <div class="absolute inset-0 bg-black/40"></div>
+            <div class="relative px-4">
+                <h1 class="entra font-medium text-5xl sm:text-7xl lg:text-8xl">
+                    {siteConfig.name}
+                </h1>
+                <p class="entra mt-6 text-lg font-normal uppercase tracking-wide sm:text-3xl" style="--ritardo: 0.3s">
+                    Il quartiere, il monastero, la festa
+                </p>
+            </div>
+        </section>
+
+        <!-- Current news as a thin notice strip, only when there is any -->
+        {
+            novita.length > 0 && (
+                <section class="bg-verde text-white" aria-label="Novità dal quartiere">
+                    <ul class="mx-auto max-w-7xl divide-y divide-white/15 px-4 sm:px-8">
+                        {novitaMostrate.map((n) => (
+                            <li>
+                                <a href={`${baseUrl}notizie/${n.id}/`} class="group flex items-center gap-4 py-3.5">
+                                    <span class="relative flex size-2.5 shrink-0" aria-hidden="true">
+                                        <span class="absolute inline-flex size-full animate-ping rounded-full bg-verde-chiaro opacity-75" />
+                                        <span class="relative inline-flex size-2.5 rounded-full bg-verde-chiaro" />
+                                    </span>
+                                    <span class="occhiello hidden shrink-0 text-sm text-verde-chiaro sm:inline">Novità</span>
+                                    <span class="min-w-0 flex-1 truncate text-lg">
+                                        <strong class="font-semibold">{n.data.titolo}</strong>
+                                        <span class="hidden text-white/80 md:inline"> — {n.data.riassunto}</span>
+                                    </span>
+                                    <span class="shrink-0 whitespace-nowrap underline-offset-4 group-hover:underline">
+                                        Leggi <span aria-hidden="true">→</span>
+                                    </span>
+                                </a>
+                            </li>
+                        ))}
+                        {altreNovita > 0 && (
+                            <li>
+                                <a href={`${baseUrl}notizie/`} class="group flex items-center gap-4 py-3.5">
+                                    <span class="size-2.5 shrink-0" aria-hidden="true" />
+                                    <span class="flex-1 text-lg underline-offset-4 group-hover:underline">
+                                        E altre {altreNovita} novità <span aria-hidden="true">→</span>
+                                    </span>
+                                </a>
+                            </li>
+                        )}
+                    </ul>
+                </section>
+            )
+        }
+    </div>
 
     <!-- Welcome: text on the left, two photos on the right -->
     <section class="mx-auto grid max-w-7xl items-center gap-16 px-4 py-24 sm:px-8 lg:grid-cols-2 lg:py-36">

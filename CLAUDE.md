@@ -32,9 +32,9 @@ The project was a Laravel app until October 2026; that code is only in the git h
 - The graphic style follows https://www.cimamontegrappa.it/ (chosen by the owner): large headings, full-width photos, pill buttons; on top of it, an old-style look chosen by the owner (serif font, ivory background).
 - Scroll-driven animations (`animation-timeline`) must be written with longhand properties: the CSS minifier merges them into the `animation` shorthand, which browsers reject. All animations stop under `prefers-reduced-motion`.
 - `public/` — files served as-is (favicons, `robots.txt`)
-- Contact email and Facebook link are in `src/site.config.ts`; the council members are listed in `src/pages/consiglio.astro`
+- Contact email, Facebook and Instagram links are in `src/site.config.ts`; the council members are listed in `src/pages/consiglio.astro`
 - The site is published on GitHub Pages at https://edopilati91.github.io/sito-quartiere/ by `.github/workflows/deploy.yml` on every push to `main`. Because of the `/sito-quartiere/` base path, internal links and `public/` files must be prefixed with `import.meta.env.BASE_URL`, never a bare `/`. When a custom domain is connected, update `site` and remove `base` in `astro.config.mjs`.
-- For news or events, use Astro content collections with Markdown files rather than a database.
+- News and announcements (`/notizie/`) are the `notizie` collection: one Markdown file per news item in `src/content/notizie/`, with `titolo`, `data` and `riassunto`, an optional flyer in `src/assets/notizie/` (`volantino` and `volantinoAlt`) and an optional `fino` date. News items not past their `fino` date (or without one) appear in the news strip at the bottom of the home page's opening photo, newest first: at most two rows, and with more than two the second row links to `/notizie/`. All news stay in `/notizie/`. Write the flyer's text in the body too, so it can be read without the image. The deploy workflow also runs every night, so a news item leaves the home page the day after its `fino` date with no push. Helpers are in `src/notizie.ts`.
 
 ## Conventions
 

@@ -6,5 +6,6 @@ export const siteConfig = {
     description: 'Il sito del Quartiere San Fortunato di Bassano del Grappa.',
     lang: 'it',
     facebook: 'https://www.facebook.com/QuartiereSanFortunatoBassanoDelGrappa/',
+    instagram: 'https://www.instagram.com/quartiere_san_fortunato/',
     email: 'consiglio@quartiere-sanfortunato.com',
 };
