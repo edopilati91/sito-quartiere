@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
+import aperturaHome from '../assets/drone/apertura-home.jpg';
 import logo from '../assets/logo.jpg';
 import signori from '../assets/pubblicazioni/signori-origini-e-vicende.jpg';
 import zonta from '../assets/pubblicazioni/zonta-memorie-cronache.jpg';
@@ -30,14 +31,25 @@ const altreNovita = novita.length - novitaMostrate.length;
         <!-- Opening photo with the name in the middle -->
         <section class="relative flex flex-1 items-center justify-center overflow-hidden text-center text-white">
             <Image
-                src={processione}
-                alt="Foto storica della processione della Festa Votiva sotto le luminarie di carta"
-                widths={[800]}
+                src={aperturaHome}
+                alt="Il monastero di San Fortunato visto dall'alto, tra il prato e il fiume, con gli alberi d'autunno"
+                widths={[800, 1200, 1920]}
                 sizes="100vw"
                 loading="eager"
                 fetchpriority="high"
-                class="zoom-lento absolute inset-0 size-full object-cover"
+                class="absolute inset-0 size-full object-cover"
             />
+            <!-- Loaded by the script below only on large screens, so phones and reduced motion keep the still photo -->
+            <video
+                id="video-apertura"
+                data-src={`${baseUrl}video/apertura-home.mp4`}
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+                class="absolute inset-0 size-full object-cover opacity-0 transition-opacity duration-1000"
+            ></video>
             <div class="absolute inset-0 bg-black/40"></div>
             <div class="relative px-4">
                 <h1 class="entra font-medium text-5xl sm:text-7xl lg:text-8xl">
@@ -47,6 +59,14 @@ const altreNovita = novita.length - novitaMostrate.length;
                     Il quartiere, il monastero, la festa
                 </p>
             </div>
+            <button
+                id="pausa-video"
+                type="button"
+                hidden
+                class="absolute bottom-4 right-4 rounded-full bg-black/70 px-4 py-2 text-base text-white hover:bg-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            >
+                Metti in pausa il video
+            </button>
         </section>
 
         <!-- Current news as a thin notice strip, only when there is any -->
@@ -263,4 +283,37 @@ const altreNovita = novita.length - novitaMostrate.length;
             <Bottone href={`${baseUrl}contatti/`} variante="vuoto">Contatti</Bottone>
         </div>
     </section>
+
+    <script>
+        const video = document.querySelector<HTMLVideoElement>('#video-apertura');
+        const pausa = document.querySelector<HTMLButtonElement>('#pausa-video');
+        const connessione = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
+        const adatto =
+            window.matchMedia('(min-width: 1024px)').matches &&
+            !window.matchMedia('(prefers-reduced-motion: reduce)').matches &&
+            !connessione?.saveData;
+
+        if (video && pausa && adatto && video.dataset.src) {
+            video.addEventListener(
+                'playing',
+                () => {
+                    video.classList.remove('opacity-0');
+                    pausa.hidden = false;
+                },
+                { once: true },
+            );
+            pausa.addEventListener('click', () => {
+                if (video.paused) {
+                    video.play();
+                    pausa.textContent = 'Metti in pausa il video';
+                } else {
+                    video.pause();
+                    pausa.textContent = 'Riproduci il video';
+                }
+            });
+            video.src = video.dataset.src;
+            // Autoplay can be refused by the browser: the still photo then simply stays.
+            video.play().catch(() => {});
+        }
+    </script>
 </BaseLayout>
