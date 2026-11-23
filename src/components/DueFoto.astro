@@ -25,7 +25,7 @@ const { grande, grandeAlt, piccola, piccolaAlt, lato = 'destra' } = Astro.props;
         <Image
             src={grande}
             alt={grandeAlt}
-            widths={[480, 800]}
+            widths={grande.width >= 1500 ? [480, 800, 1200, 1500] : [480, 800]}
             sizes="(min-width: 1024px) 50vw, 100vw"
             class="size-full object-cover"
         />
