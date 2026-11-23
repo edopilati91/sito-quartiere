@@ -1,8 +1,8 @@
 ---
 import { Image } from 'astro:assets';
+import complessoDallAlto from '../assets/drone/complesso-dall-alto.jpg';
 import signori from '../assets/pubblicazioni/signori-origini-e-vicende.jpg';
 import zonta from '../assets/pubblicazioni/zonta-memorie-cronache.jpg';
-import orti from '../assets/storia/orti-monastero.jpg';
 import TestataPagina from '../components/TestataPagina.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
@@ -11,7 +11,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     title="Pubblicazioni"
     description="I volumi sulla storia del monastero di San Fortunato e della Festa Votiva pubblicati dal Consiglio di Quartiere."
 >
-    <TestataPagina titolo="Pubblicazioni" occhiello="Volumi pubblicati dal Consiglio di Quartiere" immagine={orti} />
+    <TestataPagina titolo="Pubblicazioni" occhiello="Volumi pubblicati dal Consiglio di Quartiere" immagine={complessoDallAlto} />
 
     <section class="bg-verde-tenue">
         <figure class="mx-auto max-w-3xl px-4 py-24 text-center sm:px-8">

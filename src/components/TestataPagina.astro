@@ -18,7 +18,7 @@ const { titolo, occhiello, immagine, alt = '' } = Astro.props;
     <Image
         src={immagine}
         alt={alt}
-        widths={[800]}
+        widths={immagine.width >= 2000 ? [800, 1200, 2000] : [800]}
         sizes="100vw"
         loading="eager"
         class="zoom-lento absolute inset-0 size-full object-cover"

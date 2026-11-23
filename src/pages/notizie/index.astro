@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import chiostro from '../../assets/storia/chiostro.jpg';
+import complessoDallAlto from '../../assets/drone/complesso-dall-alto.jpg';
 import TestataPagina from '../../components/TestataPagina.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { formattaData, tutteLeNotizie } from '../../notizie';
@@ -10,7 +10,7 @@ const notizie = await tutteLeNotizie();
 ---
 
 <BaseLayout title="Notizie" description="Avvisi, appuntamenti e iniziative del Quartiere San Fortunato.">
-    <TestataPagina titolo="Notizie" occhiello="Avvisi e appuntamenti del quartiere" immagine={chiostro} />
+    <TestataPagina titolo="Notizie" occhiello="Avvisi e appuntamenti del quartiere" immagine={complessoDallAlto} />
 
     <section class="mx-auto max-w-4xl px-4 py-20 sm:px-8 lg:py-28">
         {notizie.length === 0 && <p class="text-center text-lg text-neutral-700">Al momento non ci sono notizie.</p>}
