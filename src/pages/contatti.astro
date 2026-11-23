@@ -1,7 +1,5 @@
 ---
-import { Image } from 'astro:assets';
-import chiostro from '../assets/storia/chiostro.jpg';
-import orti from '../assets/storia/orti-monastero.jpg';
+import complessoEBrenta from '../assets/drone/complesso-e-brenta.jpg';
 import Bottone from '../components/Bottone.astro';
 import TestataPagina from '../components/TestataPagina.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -9,14 +7,16 @@ import { siteConfig } from '../site.config';
 ---
 
 <BaseLayout title="Contatti" description="Come contattare il Consiglio di Quartiere San Fortunato.">
-    <TestataPagina titolo="Contatti" occhiello="Consiglio di Quartiere San Fortunato" immagine={chiostro} />
+    <TestataPagina titolo="Contatti" occhiello="Consiglio di Quartiere San Fortunato" immagine={complessoEBrenta} />
 
-    <section class="mx-auto grid max-w-7xl items-center gap-16 px-4 py-24 sm:px-8 lg:grid-cols-2 lg:py-32">
+    <section class="mx-auto max-w-7xl px-4 py-24 sm:px-8 lg:py-32">
         <div class="rivela">
-            <p class="occhiello">Scriveteci</p>
-            <h2 class="mt-4 text-4xl font-normal leading-tight sm:text-5xl">Il Consiglio è a disposizione del quartiere</h2>
+            <div class="text-center">
+                <p class="occhiello">Scriveteci</p>
+                <h2 class="mt-4 text-4xl font-normal leading-tight sm:text-6xl">Il Consiglio è a disposizione del quartiere</h2>
+            </div>
 
-            <dl class="mt-12 space-y-8">
+            <dl class="mt-16 grid gap-x-16 gap-y-8 md:grid-cols-2 lg:mt-20">
                 <div class="border-b border-black/10 pb-6">
                     <dt class="occhiello text-sm text-neutral-600">Presidente del Consiglio di Quartiere</dt>
                     <dd class="mt-2 text-2xl font-normal">Luisa Bizzotto</dd>
@@ -47,16 +47,9 @@ import { siteConfig } from '../site.config';
                 </div>
             </dl>
 
-            <div class="mt-12">
+            <div class="mt-14 text-center">
                 <Bottone href={`mailto:${siteConfig.email}`}>Scrivi una email</Bottone>
             </div>
         </div>
-        <Image
-            src={orti}
-            alt="Gli orti con il muro in sassi di Brenta e il monastero sullo sfondo"
-            widths={[388]}
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            class="rivela aspect-[4/5] w-full object-cover"
-        />
     </section>
 </BaseLayout>
