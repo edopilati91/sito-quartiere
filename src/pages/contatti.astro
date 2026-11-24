@@ -4,6 +4,12 @@ import Bottone from '../components/Bottone.astro';
 import TestataPagina from '../components/TestataPagina.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { siteConfig } from '../site.config';
+
+const { sede } = siteConfig;
+const indirizzoCompleto = `${sede.indirizzo}, ${sede.cap} ${siteConfig.luogo}`;
+// OpenStreetMap embed (no cookies), framed around the seat
+const mappa = `https://www.openstreetmap.org/export/embed.html?bbox=${sede.lon - 0.006},${sede.lat - 0.003},${sede.lon + 0.006},${sede.lat + 0.003}&layer=mapnik&marker=${sede.lat},${sede.lon}`;
+const googleMaps = `https://www.google.com/maps/search/?api=1&query=${sede.lat},${sede.lon}`;
 ---
 
 <BaseLayout title="Contatti" description="Come contattare il Consiglio di Quartiere San Fortunato.">
@@ -49,6 +55,33 @@ import { siteConfig } from '../site.config';
 
             <div class="mt-14 text-center">
                 <Bottone href={`mailto:${siteConfig.email}`}>Scrivi una email</Bottone>
+            </div>
+        </div>
+    </section>
+
+    <section class="border-t border-black/10" aria-labelledby="dove-siamo">
+        <div class="mx-auto grid max-w-7xl items-center gap-12 px-4 py-24 sm:px-8 lg:grid-cols-[2fr_3fr] lg:py-32">
+            <div class="rivela">
+                <p class="occhiello">Dove siamo</p>
+                <h2 id="dove-siamo" class="mt-4 text-4xl font-normal leading-tight sm:text-5xl">
+                    La sede del Consiglio di Quartiere
+                </h2>
+                <address class="mt-8 text-xl not-italic leading-relaxed">
+                    {sede.indirizzo}<br />
+                    {sede.cap} {siteConfig.luogo} ({siteConfig.provincia}), Veneto
+                </address>
+                <p class="mt-4 text-lg leading-relaxed text-neutral-700">A pochi passi dal monastero di San Fortunato.</p>
+                <div class="mt-10">
+                    <Bottone href={googleMaps} variante="vuoto">Indicazioni stradali</Bottone>
+                </div>
+            </div>
+            <div class="rivela border border-black/10">
+                <iframe
+                    src={mappa}
+                    title={`Mappa: sede del Consiglio di Quartiere, ${indirizzoCompleto}`}
+                    loading="lazy"
+                    class="block aspect-[4/3] w-full"
+                ></iframe>
             </div>
         </div>
     </section>
